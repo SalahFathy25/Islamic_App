@@ -33,9 +33,9 @@ class _SplashScreenState extends State<SplashScreen> {
     // await _player.play(AssetSource('sounds/intro.mp3'));
   }
 
-  // Future<void> _muteSound() async {
-  //   await _player.setVolume(0.0);
-  // }
+  Future<void> _muteSound() async {
+    await _player.setVolume(0.0);
+  }
 
   @override
   void dispose() {
