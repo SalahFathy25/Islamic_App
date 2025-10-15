@@ -40,6 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void dispose() {
     _player.dispose();
+
     super.dispose();
   }
 
