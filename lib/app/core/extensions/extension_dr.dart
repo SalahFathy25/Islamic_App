@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 /// Comprehensive DropdownButton Extensions for Flutter
 extension DropdownExtensions<T> on DropdownButton<T> {
@@ -12,221 +11,217 @@ extension DropdownExtensions<T> on DropdownButton<T> {
     double? menuMaxHeight,
     bool? enableFeedback,
     BorderRadius? borderRadius,
-  }) =>
-      DropdownButton<T>(
-        key: key,
-        items: items,
-        selectedItemBuilder: selectedItemBuilder,
-        value: value,
-        hint: hint,
-        disabledHint: disabledHint,
-        onChanged: onChanged,
-        onTap: onTap,
-        elevation: elevation ?? this.elevation,
-        style: style ?? this.style,
-        underline: underline,
-        icon: icon,
-        iconDisabledColor: iconDisabledColor,
-        iconEnabledColor: iconEnabledColor,
-        iconSize: iconSize,
-        isDense: isDense,
-        isExpanded: isExpanded,
-        itemHeight: itemHeight,
-        focusColor: focusColor ?? this.focusColor,
-        focusNode: focusNode,
-        autofocus: autofocus,
-        dropdownColor: dropdownColor ?? this.dropdownColor,
-        menuMaxHeight: menuMaxHeight ?? this.menuMaxHeight,
-        enableFeedback: enableFeedback ?? this.enableFeedback,
-        alignment: alignment,
-        borderRadius: borderRadius ?? this.borderRadius,
-      );
+  }) => DropdownButton<T>(
+    key: key,
+    items: items,
+    selectedItemBuilder: selectedItemBuilder,
+    value: value,
+    hint: hint,
+    disabledHint: disabledHint,
+    onChanged: onChanged,
+    onTap: onTap,
+    elevation: elevation ?? this.elevation,
+    style: style ?? this.style,
+    underline: underline,
+    icon: icon,
+    iconDisabledColor: iconDisabledColor,
+    iconEnabledColor: iconEnabledColor,
+    iconSize: iconSize,
+    isDense: isDense,
+    isExpanded: isExpanded,
+    itemHeight: itemHeight,
+    focusColor: focusColor ?? this.focusColor,
+    focusNode: focusNode,
+    autofocus: autofocus,
+    dropdownColor: dropdownColor ?? this.dropdownColor,
+    menuMaxHeight: menuMaxHeight ?? this.menuMaxHeight,
+    enableFeedback: enableFeedback ?? this.enableFeedback,
+    alignment: alignment,
+    borderRadius: borderRadius ?? this.borderRadius,
+  );
 
   // Size Variations
   DropdownButton<T> get expanded => DropdownButton<T>(
-        key: key,
-        items: items,
-        selectedItemBuilder: selectedItemBuilder,
-        value: value,
-        hint: hint,
-        disabledHint: disabledHint,
-        onChanged: onChanged,
-        onTap: onTap,
-        elevation: elevation,
-        style: style,
-        underline: underline,
-        icon: icon,
-        iconDisabledColor: iconDisabledColor,
-        iconEnabledColor: iconEnabledColor,
-        iconSize: iconSize,
-        isDense: isDense,
-        isExpanded: true,
-        itemHeight: itemHeight,
-        focusColor: focusColor,
-        focusNode: focusNode,
-        autofocus: autofocus,
-        dropdownColor: dropdownColor,
-        menuMaxHeight: menuMaxHeight,
-        enableFeedback: enableFeedback,
-        alignment: alignment,
-        borderRadius: borderRadius,
-      );
+    key: key,
+    items: items,
+    selectedItemBuilder: selectedItemBuilder,
+    value: value,
+    hint: hint,
+    disabledHint: disabledHint,
+    onChanged: onChanged,
+    onTap: onTap,
+    elevation: elevation,
+    style: style,
+    underline: underline,
+    icon: icon,
+    iconDisabledColor: iconDisabledColor,
+    iconEnabledColor: iconEnabledColor,
+    iconSize: iconSize,
+    isDense: isDense,
+    isExpanded: true,
+    itemHeight: itemHeight,
+    focusColor: focusColor,
+    focusNode: focusNode,
+    autofocus: autofocus,
+    dropdownColor: dropdownColor,
+    menuMaxHeight: menuMaxHeight,
+    enableFeedback: enableFeedback,
+    alignment: alignment,
+    borderRadius: borderRadius,
+  );
 
   DropdownButton<T> get dense => DropdownButton<T>(
-        key: key,
-        items: items,
-        selectedItemBuilder: selectedItemBuilder,
-        value: value,
-        hint: hint,
-        disabledHint: disabledHint,
-        onChanged: onChanged,
-        onTap: onTap,
-        elevation: elevation,
-        style: style,
-        underline: underline,
-        icon: icon,
-        iconDisabledColor: iconDisabledColor,
-        iconEnabledColor: iconEnabledColor,
-        iconSize: iconSize,
-        isDense: true,
-        isExpanded: isExpanded,
-        itemHeight: itemHeight,
-        focusColor: focusColor,
-        focusNode: focusNode,
-        autofocus: autofocus,
-        dropdownColor: dropdownColor,
-        menuMaxHeight: menuMaxHeight,
-        enableFeedback: enableFeedback,
-        alignment: alignment,
-        borderRadius: borderRadius,
-      );
+    key: key,
+    items: items,
+    selectedItemBuilder: selectedItemBuilder,
+    value: value,
+    hint: hint,
+    disabledHint: disabledHint,
+    onChanged: onChanged,
+    onTap: onTap,
+    elevation: elevation,
+    style: style,
+    underline: underline,
+    icon: icon,
+    iconDisabledColor: iconDisabledColor,
+    iconEnabledColor: iconEnabledColor,
+    iconSize: iconSize,
+    isDense: true,
+    isExpanded: isExpanded,
+    itemHeight: itemHeight,
+    focusColor: focusColor,
+    focusNode: focusNode,
+    autofocus: autofocus,
+    dropdownColor: dropdownColor,
+    menuMaxHeight: menuMaxHeight,
+    enableFeedback: enableFeedback,
+    alignment: alignment,
+    borderRadius: borderRadius,
+  );
 
   // Border Styles
   DropdownButton<T> get outlined => DropdownButton<T>(
-        key: key,
-        items: items,
-        selectedItemBuilder: selectedItemBuilder,
-        value: value,
-        hint: hint,
-        disabledHint: disabledHint,
-        onChanged: onChanged,
-        onTap: onTap,
-        elevation: elevation,
-        style: style,
-        underline: Container(
-          height: 2,
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(8),
-          ),
-        ),
-        icon: icon,
-        iconDisabledColor: iconDisabledColor,
-        iconEnabledColor: iconEnabledColor,
-        iconSize: iconSize,
-        isDense: isDense,
-        isExpanded: isExpanded,
-        itemHeight: itemHeight,
-        focusColor: focusColor,
-        focusNode: focusNode,
-        autofocus: autofocus,
-        dropdownColor: dropdownColor,
-        menuMaxHeight: menuMaxHeight,
-        enableFeedback: enableFeedback,
-        alignment: alignment,
-        borderRadius: borderRadius,
-      );
+    key: key,
+    items: items,
+    selectedItemBuilder: selectedItemBuilder,
+    value: value,
+    hint: hint,
+    disabledHint: disabledHint,
+    onChanged: onChanged,
+    onTap: onTap,
+    elevation: elevation,
+    style: style,
+    underline: Container(
+      height: 2,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(8),
+      ),
+    ),
+    icon: icon,
+    iconDisabledColor: iconDisabledColor,
+    iconEnabledColor: iconEnabledColor,
+    iconSize: iconSize,
+    isDense: isDense,
+    isExpanded: isExpanded,
+    itemHeight: itemHeight,
+    focusColor: focusColor,
+    focusNode: focusNode,
+    autofocus: autofocus,
+    dropdownColor: dropdownColor,
+    menuMaxHeight: menuMaxHeight,
+    enableFeedback: enableFeedback,
+    alignment: alignment,
+    borderRadius: borderRadius,
+  );
 
   DropdownButton<T> get underlined => DropdownButton<T>(
-        key: key,
-        items: items,
-        selectedItemBuilder: selectedItemBuilder,
-        value: value,
-        hint: hint,
-        disabledHint: disabledHint,
-        onChanged: onChanged,
-        onTap: onTap,
-        elevation: elevation,
-        style: style,
-        underline: Container(
-          height: 2,
-          color: Colors.grey,
-        ),
-        icon: icon,
-        iconDisabledColor: iconDisabledColor,
-        iconEnabledColor: iconEnabledColor,
-        iconSize: iconSize,
-        isDense: isDense,
-        isExpanded: isExpanded,
-        itemHeight: itemHeight,
-        focusColor: focusColor,
-        focusNode: focusNode,
-        autofocus: autofocus,
-        dropdownColor: dropdownColor,
-        menuMaxHeight: menuMaxHeight,
-        enableFeedback: enableFeedback,
-        alignment: alignment,
-        borderRadius: borderRadius,
-      );
+    key: key,
+    items: items,
+    selectedItemBuilder: selectedItemBuilder,
+    value: value,
+    hint: hint,
+    disabledHint: disabledHint,
+    onChanged: onChanged,
+    onTap: onTap,
+    elevation: elevation,
+    style: style,
+    underline: Container(height: 2, color: Colors.grey),
+    icon: icon,
+    iconDisabledColor: iconDisabledColor,
+    iconEnabledColor: iconEnabledColor,
+    iconSize: iconSize,
+    isDense: isDense,
+    isExpanded: isExpanded,
+    itemHeight: itemHeight,
+    focusColor: focusColor,
+    focusNode: focusNode,
+    autofocus: autofocus,
+    dropdownColor: dropdownColor,
+    menuMaxHeight: menuMaxHeight,
+    enableFeedback: enableFeedback,
+    alignment: alignment,
+    borderRadius: borderRadius,
+  );
 
   DropdownButton<T> get noUnderline => DropdownButton<T>(
-        key: key,
-        items: items,
-        selectedItemBuilder: selectedItemBuilder,
-        value: value,
-        hint: hint,
-        disabledHint: disabledHint,
-        onChanged: onChanged,
-        onTap: onTap,
-        elevation: elevation,
-        style: style,
-        underline: const SizedBox.shrink(),
-        icon: icon,
-        iconDisabledColor: iconDisabledColor,
-        iconEnabledColor: iconEnabledColor,
-        iconSize: iconSize,
-        isDense: isDense,
-        isExpanded: isExpanded,
-        itemHeight: itemHeight,
-        focusColor: focusColor,
-        focusNode: focusNode,
-        autofocus: autofocus,
-        dropdownColor: dropdownColor,
-        menuMaxHeight: menuMaxHeight,
-        enableFeedback: enableFeedback,
-        alignment: alignment,
-        borderRadius: borderRadius,
-      );
+    key: key,
+    items: items,
+    selectedItemBuilder: selectedItemBuilder,
+    value: value,
+    hint: hint,
+    disabledHint: disabledHint,
+    onChanged: onChanged,
+    onTap: onTap,
+    elevation: elevation,
+    style: style,
+    underline: const SizedBox.shrink(),
+    icon: icon,
+    iconDisabledColor: iconDisabledColor,
+    iconEnabledColor: iconEnabledColor,
+    iconSize: iconSize,
+    isDense: isDense,
+    isExpanded: isExpanded,
+    itemHeight: itemHeight,
+    focusColor: focusColor,
+    focusNode: focusNode,
+    autofocus: autofocus,
+    dropdownColor: dropdownColor,
+    menuMaxHeight: menuMaxHeight,
+    enableFeedback: enableFeedback,
+    alignment: alignment,
+    borderRadius: borderRadius,
+  );
 
   // Icon Variations
   DropdownButton<T> withIcon(Widget icon) => DropdownButton<T>(
-        key: key,
-        items: items,
-        selectedItemBuilder: selectedItemBuilder,
-        value: value,
-        hint: hint,
-        disabledHint: disabledHint,
-        onChanged: onChanged,
-        onTap: onTap,
-        elevation: elevation,
-        style: style,
-        underline: underline,
-        icon: icon,
-        iconDisabledColor: iconDisabledColor,
-        iconEnabledColor: iconEnabledColor,
-        iconSize: iconSize,
-        isDense: isDense,
-        isExpanded: isExpanded,
-        itemHeight: itemHeight,
-        focusColor: focusColor,
-        focusNode: focusNode,
-        autofocus: autofocus,
-        dropdownColor: dropdownColor,
-        menuMaxHeight: menuMaxHeight,
-        enableFeedback: enableFeedback,
-        alignment: alignment,
-        borderRadius: borderRadius,
-      );
+    key: key,
+    items: items,
+    selectedItemBuilder: selectedItemBuilder,
+    value: value,
+    hint: hint,
+    disabledHint: disabledHint,
+    onChanged: onChanged,
+    onTap: onTap,
+    elevation: elevation,
+    style: style,
+    underline: underline,
+    icon: icon,
+    iconDisabledColor: iconDisabledColor,
+    iconEnabledColor: iconEnabledColor,
+    iconSize: iconSize,
+    isDense: isDense,
+    isExpanded: isExpanded,
+    itemHeight: itemHeight,
+    focusColor: focusColor,
+    focusNode: focusNode,
+    autofocus: autofocus,
+    dropdownColor: dropdownColor,
+    menuMaxHeight: menuMaxHeight,
+    enableFeedback: enableFeedback,
+    alignment: alignment,
+    borderRadius: borderRadius,
+  );
 
   DropdownButton<T> get noIcon => withIcon(const SizedBox.shrink());
 }
@@ -261,7 +256,8 @@ class CustomDropdown {
           )
           .toList(),
       onChanged: enabled ? onChanged : null,
-      decoration: decoration ??
+      decoration:
+          decoration ??
           InputDecoration(
             hintText: hintText,
             prefixIcon: prefixIcon,
@@ -325,9 +321,9 @@ class CustomDropdown {
                       if (searchFilter != null) {
                         return searchFilter(item, query);
                       }
-                      return itemAsString(item)
-                          .toLowerCase()
-                          .contains(query.toLowerCase());
+                      return itemAsString(
+                        item,
+                      ).toLowerCase().contains(query.toLowerCase());
                     }).toList();
                   }
                 });
@@ -347,7 +343,8 @@ class CustomDropdown {
                   )
                   .toList(),
               onChanged: enabled ? onChanged : null,
-              decoration: decoration ??
+              decoration:
+                  decoration ??
                   InputDecoration(
                     hintText: hintText,
                     prefixIcon: prefixIcon,
@@ -394,7 +391,8 @@ class CustomDropdown {
           initialValue: selectedItems,
           builder: (field) {
             return InputDecorator(
-              decoration: decoration ??
+              decoration:
+                  decoration ??
                   InputDecoration(
                     hintText: hintText,
                     prefixIcon: prefixIcon,
@@ -407,21 +405,21 @@ class CustomDropdown {
               child: InkWell(
                 onTap: enabled
                     ? () => _showMultiSelectDialog<T>(
-                          context: context,
-                          items: items,
-                          itemAsString: itemAsString,
-                          selectedItems: selectedItems!,
-                          onChanged: (newSelection) {
-                            setState(() {
-                              selectedItems!.clear();
-                              selectedItems!.addAll(newSelection);
-                              onChanged(selectedItems!);
-                              field.didChange(selectedItems);
-                            });
-                          },
-                          title: hintText ?? 'اختر عناصر',
-                          maxSelections: maxSelections,
-                        )
+                        context: context,
+                        items: items,
+                        itemAsString: itemAsString,
+                        selectedItems: selectedItems!,
+                        onChanged: (newSelection) {
+                          setState(() {
+                            selectedItems!.clear();
+                            selectedItems!.addAll(newSelection);
+                            onChanged(selectedItems!);
+                            field.didChange(selectedItems);
+                          });
+                        },
+                        title: hintText ?? 'اختر عناصر',
+                        maxSelections: maxSelections,
+                      )
                     : null,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -431,8 +429,9 @@ class CustomDropdown {
                         selectedItems!.isEmpty
                             ? (hintText ?? 'اختر عناصر')
                             : selectedItemsText ??
-                                '${selectedItems!.length} عنصر محدد',
-                        style: style ??
+                                  '${selectedItems!.length} عنصر محدد',
+                        style:
+                            style ??
                             TextStyle(
                               color: selectedItems!.isEmpty
                                   ? Colors.grey[600]
@@ -483,7 +482,8 @@ class CustomDropdown {
           )
           .toList(),
       onChanged: enabled ? onChanged : null,
-      decoration: decoration ??
+      decoration:
+          decoration ??
           InputDecoration(
             hintText: hintText,
             prefixIcon: prefixIcon,
@@ -547,11 +547,9 @@ class CustomDropdown {
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           border: InputBorder.none,
-          contentPadding: padding ??
-              const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 12,
-              ),
+          contentPadding:
+              padding ??
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         ),
         style: style,
         dropdownColor: dropdownColor,
@@ -588,7 +586,8 @@ class CustomDropdown {
                   itemBuilder: (context, index) {
                     final item = items[index];
                     final isSelected = tempSelected.contains(item);
-                    final canSelect = maxSelections == null ||
+                    final canSelect =
+                        maxSelections == null ||
                         tempSelected.length < maxSelections ||
                         isSelected;
 
@@ -686,11 +685,7 @@ class Country {
   final String name;
   final String flag;
 
-  const Country({
-    required this.code,
-    required this.name,
-    required this.flag,
-  });
+  const Country({required this.code, required this.name, required this.flag});
 
   @override
   bool operator ==(Object other) =>
@@ -732,26 +727,28 @@ class Countries {
   ];
 
   static List<Country> get arab => all
-      .where((c) => [
-            'EG',
-            'SA',
-            'AE',
-            'KW',
-            'QA',
-            'BH',
-            'OM',
-            'JO',
-            'LB',
-            'SY',
-            'IQ',
-            'MA',
-            'TN',
-            'DZ',
-            'LY',
-            'SD',
-            'YE',
-            'PS'
-          ].contains(c.code))
+      .where(
+        (c) => [
+          'EG',
+          'SA',
+          'AE',
+          'KW',
+          'QA',
+          'BH',
+          'OM',
+          'JO',
+          'LB',
+          'SY',
+          'IQ',
+          'MA',
+          'TN',
+          'DZ',
+          'LY',
+          'SD',
+          'YE',
+          'PS',
+        ].contains(c.code),
+      )
       .toList();
 
   static List<Country> get gulf => all
@@ -768,26 +765,24 @@ extension QuickDropdowns on Never {
     T? value,
     ValueChanged<T?>? onChanged,
     String? hint,
-  }) =>
-      CustomDropdown.simple<T>(
-        items: items,
-        itemAsString: itemAsString,
-        selectedItem: value,
-        onChanged: onChanged ?? (_) {},
-        hintText: hint,
-      );
+  }) => CustomDropdown.simple<T>(
+    items: items,
+    itemAsString: itemAsString,
+    selectedItem: value,
+    onChanged: onChanged ?? (_) {},
+    hintText: hint,
+  );
 
   /// Quick country dropdown
   static Widget country({
     Country? value,
     ValueChanged<Country?>? onChanged,
     String? hint = 'اختر الدولة',
-  }) =>
-      CustomDropdown.country(
-        selectedCountry: value,
-        onChanged: onChanged ?? (_) {},
-        hintText: hint,
-      );
+  }) => CustomDropdown.country(
+    selectedCountry: value,
+    onChanged: onChanged ?? (_) {},
+    hintText: hint,
+  );
 
   /// Quick multi-select dropdown
   static Widget multiSelect<T>(
@@ -796,12 +791,11 @@ extension QuickDropdowns on Never {
     List<T>? selectedItems,
     ValueChanged<List<T>>? onChanged,
     String? hint,
-  }) =>
-      CustomDropdown.multiSelect<T>(
-        items: items,
-        itemAsString: itemAsString,
-        selectedItems: selectedItems,
-        onChanged: onChanged ?? (_) {},
-        hintText: hint,
-      );
+  }) => CustomDropdown.multiSelect<T>(
+    items: items,
+    itemAsString: itemAsString,
+    selectedItems: selectedItems,
+    onChanged: onChanged ?? (_) {},
+    hintText: hint,
+  );
 }
