@@ -19,6 +19,7 @@ class IslamicApp extends StatelessWidget {
 
       builder: (_, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           localizationsDelegates: [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
