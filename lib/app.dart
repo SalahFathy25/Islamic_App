@@ -17,7 +17,6 @@ class IslamicApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
 
-      // child:
       builder: (_, child) {
         return MaterialApp(
           localizationsDelegates: [
