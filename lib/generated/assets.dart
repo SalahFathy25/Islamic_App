@@ -2,6 +2,22 @@
 class Assets {
   Assets._();
 
+  static const String fontsAlmaraiBold = 'assets/fonts/Almarai-Bold.ttf';
+  static const String fontsAlmaraiExtraBold =
+      'assets/fonts/Almarai-ExtraBold.ttf';
+  static const String fontsAlmaraiLight = 'assets/fonts/Almarai-Light.ttf';
+  static const String fontsAlmaraiRegular = 'assets/fonts/Almarai-Regular.ttf';
+  static const String fontsAmiriQuranRegular =
+      'assets/fonts/AmiriQuran-Regular.ttf';
+  static const String fontsCairoBlack = 'assets/fonts/Cairo-Black.ttf';
+  static const String fontsCairoBold = 'assets/fonts/Cairo-Bold.ttf';
+  static const String fontsCairoExtraBold = 'assets/fonts/Cairo-ExtraBold.ttf';
+  static const String fontsCairoExtraLight =
+      'assets/fonts/Cairo-ExtraLight.ttf';
+  static const String fontsCairoLight = 'assets/fonts/Cairo-Light.ttf';
+  static const String fontsCairoMedium = 'assets/fonts/Cairo-Medium.ttf';
+  static const String fontsCairoRegular = 'assets/fonts/Cairo-Regular.ttf';
+  static const String fontsCairoSemiBold = 'assets/fonts/Cairo-SemiBold.ttf';
   static const String fontsReemKufiFunBold =
       'assets/fonts/ReemKufiFun-Bold.ttf';
   static const String fontsReemKufiFunMedium =
@@ -34,6 +50,7 @@ class Assets {
       'assets/images/home_images/zakaah_image.png';
   static const String iconsAppIcon = 'assets/images/icons/app_icon.svg';
   static const String iconsAzkaarIcon = 'assets/images/icons/azkaar_icon.svg';
+  static const String iconsBackIcon = 'assets/images/icons/back_icon.svg';
   static const String iconsHomePrayerTimesIcon =
       'assets/images/icons/home_prayer_times_icon.svg';
   static const String iconsNotificationIcon =
@@ -42,5 +59,8 @@ class Assets {
   static const String iconsQiblaIcon = 'assets/images/icons/qibla_icon.svg';
   static const String iconsQuranIcon = 'assets/images/icons/quran_icon.svg';
   static const String iconsSearchIcon = 'assets/images/icons/search_icon.svg';
+  static const String imagesAppName = 'assets/images/app_name.png';
+  static const String imagesTopAppbar = 'assets/images/top_appbar.svg';
+  static const String imagesTopHomeAppbar = 'assets/images/top_home_appbar.svg';
   static const String soundsSplashAudio = 'assets/sounds/splash_audio.mp3';
 }

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app/core/localization/generated/l10n.dart';
 import 'app/core/routes/app_router.dart';
+import 'app/core/routes/routes.dart';
 import 'app/features/home/presentation/screens/home_screen.dart';
 import 'app/features/splash/presentation/screens/splash_screen.dart';
 
@@ -27,13 +28,13 @@ class IslamicApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
+          locale: const Locale('ar'),
           title: 'Islamic App',
           onGenerateRoute: AppRouter.generateRoute,
-          initialRoute: SplashScreen.routeName,
+          initialRoute: Routes.splash,
           home: child,
         );
       },
-      child: HomeScreen(),
     );
   }
 }

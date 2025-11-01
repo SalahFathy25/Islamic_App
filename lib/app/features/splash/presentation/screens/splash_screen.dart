@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:islamic_app/app/core/routes/routes.dart';
 import 'package:islamic_app/gen/assets.gen.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -7,8 +8,6 @@ import '../../../home/presentation/screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
-
-  static const String routeName = '/splash';
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -31,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     });
 
     Future.delayed(const Duration(seconds: 15), () {
-      Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+      Navigator.pushReplacementNamed(context, Routes.homeScreen);
     });
   }
 
@@ -62,13 +61,13 @@ class _SplashScreenState extends State<SplashScreen> {
           Positioned(
             right: 0.0,
             left: 0.0,
-            bottom: 0.0,
-            top: 20.0,
+            bottom: 90.0,
+            top: 0.0,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Assets.images.a.image(),
                 Assets.images.icons.appIcon.svg(),
+                Assets.images.appName.image(),
               ],
             ),
           ),

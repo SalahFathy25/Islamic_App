@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/app/core/routes/routes.dart';
 
+import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
 
 abstract class AppRouter {
   static Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
       //--------------- Splash Screen ---------------
-      case SplashScreen.routeName:
+      case Routes.splash:
         return MaterialPageRoute(builder: (context) => const SplashScreen());
+      case Routes.homeScreen:
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
       /*
       case SplashScreen.routeName:
         return MaterialPageRoute(

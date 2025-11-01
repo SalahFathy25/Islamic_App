@@ -17,6 +17,45 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
+  /// File path: assets/fonts/Almarai-Bold.ttf
+  String get almaraiBold => 'assets/fonts/Almarai-Bold.ttf';
+
+  /// File path: assets/fonts/Almarai-ExtraBold.ttf
+  String get almaraiExtraBold => 'assets/fonts/Almarai-ExtraBold.ttf';
+
+  /// File path: assets/fonts/Almarai-Light.ttf
+  String get almaraiLight => 'assets/fonts/Almarai-Light.ttf';
+
+  /// File path: assets/fonts/Almarai-Regular.ttf
+  String get almaraiRegular => 'assets/fonts/Almarai-Regular.ttf';
+
+  /// File path: assets/fonts/AmiriQuran-Regular.ttf
+  String get amiriQuranRegular => 'assets/fonts/AmiriQuran-Regular.ttf';
+
+  /// File path: assets/fonts/Cairo-Black.ttf
+  String get cairoBlack => 'assets/fonts/Cairo-Black.ttf';
+
+  /// File path: assets/fonts/Cairo-Bold.ttf
+  String get cairoBold => 'assets/fonts/Cairo-Bold.ttf';
+
+  /// File path: assets/fonts/Cairo-ExtraBold.ttf
+  String get cairoExtraBold => 'assets/fonts/Cairo-ExtraBold.ttf';
+
+  /// File path: assets/fonts/Cairo-ExtraLight.ttf
+  String get cairoExtraLight => 'assets/fonts/Cairo-ExtraLight.ttf';
+
+  /// File path: assets/fonts/Cairo-Light.ttf
+  String get cairoLight => 'assets/fonts/Cairo-Light.ttf';
+
+  /// File path: assets/fonts/Cairo-Medium.ttf
+  String get cairoMedium => 'assets/fonts/Cairo-Medium.ttf';
+
+  /// File path: assets/fonts/Cairo-Regular.ttf
+  String get cairoRegular => 'assets/fonts/Cairo-Regular.ttf';
+
+  /// File path: assets/fonts/Cairo-SemiBold.ttf
+  String get cairoSemiBold => 'assets/fonts/Cairo-SemiBold.ttf';
+
   /// File path: assets/fonts/ReemKufiFun-Bold.ttf
   String get reemKufiFunBold => 'assets/fonts/ReemKufiFun-Bold.ttf';
 
@@ -31,6 +70,19 @@ class $AssetsFontsGen {
 
   /// List of all assets
   List<String> get values => [
+    almaraiBold,
+    almaraiExtraBold,
+    almaraiLight,
+    almaraiRegular,
+    amiriQuranRegular,
+    cairoBlack,
+    cairoBold,
+    cairoExtraBold,
+    cairoExtraLight,
+    cairoLight,
+    cairoMedium,
+    cairoRegular,
+    cairoSemiBold,
     reemKufiFunBold,
     reemKufiFunMedium,
     reemKufiFunRegular,
@@ -41,6 +93,10 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/app_name.png
+  AssetGenImage get appName =>
+      const AssetGenImage('assets/images/app_name.png');
+
   /// Directory path: assets/images/home_images
   $AssetsImagesHomeImagesGen get homeImages =>
       const $AssetsImagesHomeImagesGen();
@@ -48,11 +104,16 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/icons
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
-  /// File path: assets/images/مِشكَاة.png
-  AssetGenImage get a => const AssetGenImage('assets/images/مِشكَاة.png');
+  /// File path: assets/images/top_appbar.svg
+  SvgGenImage get topAppbar =>
+      const SvgGenImage('assets/images/top_appbar.svg');
+
+  /// File path: assets/images/top_home_appbar.svg
+  SvgGenImage get topHomeAppbar =>
+      const SvgGenImage('assets/images/top_home_appbar.svg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [a];
+  List<dynamic> get values => [appName, topAppbar, topHomeAppbar];
 }
 
 class $AssetsSoundsGen {
@@ -140,6 +201,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get azkaarIcon =>
       const SvgGenImage('assets/images/icons/azkaar_icon.svg');
 
+  /// File path: assets/images/icons/back_icon.svg
+  SvgGenImage get backIcon =>
+      const SvgGenImage('assets/images/icons/back_icon.svg');
+
   /// File path: assets/images/icons/home_prayer_times_icon.svg
   SvgGenImage get homePrayerTimesIcon =>
       const SvgGenImage('assets/images/icons/home_prayer_times_icon.svg');
@@ -168,6 +233,7 @@ class $AssetsImagesIconsGen {
   List<SvgGenImage> get values => [
     appIcon,
     azkaarIcon,
+    backIcon,
     homePrayerTimesIcon,
     notificationIcon,
     prayerIcon,
