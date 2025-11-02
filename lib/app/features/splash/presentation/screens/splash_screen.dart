@@ -4,7 +4,6 @@ import 'package:islamic_app/app/core/routes/routes.dart';
 import 'package:islamic_app/gen/assets.gen.dart';
 
 import '../../../../core/utils/app_colors.dart';
-import '../../../home/presentation/screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,6 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(const Duration(seconds: 15), () {
       Navigator.pushReplacementNamed(context, Routes.homeScreen);
+      // CustomNavigator.instance.pushReplacementNamed(Routes.homeScreen);
     });
   }
 

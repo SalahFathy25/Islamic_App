@@ -21,11 +21,15 @@ class DoaaItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.0.r),
           color: AppColors.pinkColor2,
         ),
-        clipBehavior: Clip.antiAlias,
+        // clipBehavior: Clip.antiAlias,
         child: Stack(
           children: [
-            Positioned.fill(
-              child: FittedBox(fit: BoxFit.cover, child: model.image),
+            // Positioned.fill(
+            //   child: FittedBox(fit: BoxFit.cover, child: model.image),
+            // ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0.r),
+              child: model.image,
             ),
             Positioned(
               right: 4.0.w,

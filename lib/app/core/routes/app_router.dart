@@ -12,6 +12,22 @@ abstract class AppRouter {
         return MaterialPageRoute(builder: (context) => const SplashScreen());
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
+      case Routes.azkarScreen:
+        return MaterialPageRoute(
+          builder: (context) => const Center(child: Text("Azkar Screen")),
+        );
+      case Routes.quranScreen:
+        return MaterialPageRoute(
+          builder: (context) => const Center(child: Text("Quran Screen")),
+        );
+      case Routes.prayerScreen:
+        return MaterialPageRoute(
+          builder: (context) => const Center(child: Text("Prayer Screen")),
+        );
+      case Routes.qiblaScreen:
+        return MaterialPageRoute(
+          builder: (context) => const Center(child: Text("Qibla Screen")),
+        );
       /*
       case SplashScreen.routeName:
         return MaterialPageRoute(

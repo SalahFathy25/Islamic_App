@@ -5,6 +5,12 @@ import 'package:islamic_app/generated/assets.dart';
 import 'app_colors.dart';
 
 class AppFontStyle {
+  static TextStyle fontAlmarai10w400White = TextStyle(
+    fontSize: 10.sp,
+    fontFamily: Assets.fontsAlmaraiBold,
+    fontWeight: FontWeight.w400,
+    color: AppColors.white,
+  );
   static TextStyle fontAlmarai14w700White = TextStyle(
     fontSize: 14.sp,
     fontFamily: Assets.fontsAlmaraiBold,

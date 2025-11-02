@@ -12,7 +12,7 @@ class DoaasListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 168.h,
+      height: 111.h,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => DoaaItem(model: doaasItems[index]),
