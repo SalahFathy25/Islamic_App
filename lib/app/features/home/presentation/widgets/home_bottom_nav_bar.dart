@@ -16,10 +16,10 @@ class HomeBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 16.0.h, horizontal: 24.0.w),
-      margin: EdgeInsets.only(right: 24.0.w, left: 24.0.w, bottom: 24.0.h),
+      margin: EdgeInsets.only(right: 16.0.w, left: 16.0.w, bottom: 24.0.h),
       height: 95.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0.r),
+        borderRadius: BorderRadius.circular(8.0.r),
         color: AppColors.mainColor.withValues(alpha: 0.9),
         boxShadow: [
           BoxShadow(
@@ -30,12 +30,12 @@ class HomeBottomNavBar extends StatelessWidget {
         ],
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: List.generate(
           titles.length,
           (index) => GestureDetector(
             onTap: () {
-              CustomNavigator.instance.pushNamed(screens[index]);
+              Navigator.pushNamed(context, screens[index]);
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
