@@ -17,4 +17,6 @@ class AppStrings {
   static const String doaaForHealthTitle = 'دعاء الشفاء';
   static const String doaaForFridayTitle = 'دعاء الجمعة';
   static const String doaaForArafaaTitle = 'دعاء عرفة';
+  static const String quranFirstTab = 'المصحف مكتوب';
+  static const String quranSecondTab = 'مشايخ التلاوة';
 }

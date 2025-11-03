@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String dataSurahs = 'assets/data/surahs.json';
   static const String fontsAlmaraiBold = 'assets/fonts/Almarai-Bold.ttf';
   static const String fontsAlmaraiExtraBold =
       'assets/fonts/Almarai-ExtraBold.ttf';

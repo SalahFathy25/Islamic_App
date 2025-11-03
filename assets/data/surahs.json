@@ -1,0 +1,686 @@
+[
+  {
+    "surahNumber": 1,
+    "surahName": "الفاتحة",
+    "type": "مكية",
+    "ayahNumbers": 7
+  },
+  {
+    "surahNumber": 2,
+    "surahName": "البقرة",
+    "type": "مدنية",
+    "ayahNumbers": 286
+  },
+  {
+    "surahNumber": 3,
+    "surahName": "آل عمران",
+    "type": "مدنية",
+    "ayahNumbers": 200
+  },
+  {
+    "surahNumber": 4,
+    "surahName": "النساء",
+    "type": "مدنية",
+    "ayahNumbers": 176
+  },
+  {
+    "surahNumber": 5,
+    "surahName": "المائدة",
+    "type": "مدنية",
+    "ayahNumbers": 120
+  },
+  {
+    "surahNumber": 6,
+    "surahName": "الأنعام",
+    "type": "مكية",
+    "ayahNumbers": 165
+  },
+  {
+    "surahNumber": 7,
+    "surahName": "الأعراف",
+    "type": "مكية",
+    "ayahNumbers": 206
+  },
+  {
+    "surahNumber": 8,
+    "surahName": "الأنفال",
+    "type": "مدنية",
+    "ayahNumbers": 75
+  },
+  {
+    "surahNumber": 9,
+    "surahName": "التوبة",
+    "type": "مدنية",
+    "ayahNumbers": 129
+  },
+  {
+    "surahNumber": 10,
+    "surahName": "يونس",
+    "type": "مكية",
+    "ayahNumbers": 109
+  },
+  {
+    "surahNumber": 11,
+    "surahName": "هود",
+    "type": "مكية",
+    "ayahNumbers": 123
+  },
+  {
+    "surahNumber": 12,
+    "surahName": "يوسف",
+    "type": "مكية",
+    "ayahNumbers": 111
+  },
+  {
+    "surahNumber": 13,
+    "surahName": "الرعد",
+    "type": "مدنية",
+    "ayahNumbers": 43
+  },
+  {
+    "surahNumber": 14,
+    "surahName": "إبراهيم",
+    "type": "مكية",
+    "ayahNumbers": 52
+  },
+  {
+    "surahNumber": 15,
+    "surahName": "الحجر",
+    "type": "مكية",
+    "ayahNumbers": 99
+  },
+  {
+    "surahNumber": 16,
+    "surahName": "النحل",
+    "type": "مكية",
+    "ayahNumbers": 128
+  },
+  {
+    "surahNumber": 17,
+    "surahName": "الإسراء",
+    "type": "مكية",
+    "ayahNumbers": 111
+  },
+  {
+    "surahNumber": 18,
+    "surahName": "الكهف",
+    "type": "مكية",
+    "ayahNumbers": 110
+  },
+  {
+    "surahNumber": 19,
+    "surahName": "مريم",
+    "type": "مكية",
+    "ayahNumbers": 98
+  },
+  {
+    "surahNumber": 20,
+    "surahName": "طه",
+    "type": "مكية",
+    "ayahNumbers": 135
+  },
+  {
+    "surahNumber": 21,
+    "surahName": "الأنبياء",
+    "type": "مكية",
+    "ayahNumbers": 112
+  },
+  {
+    "surahNumber": 22,
+    "surahName": "الحج",
+    "type": "مدنية",
+    "ayahNumbers": 78
+  },
+  {
+    "surahNumber": 23,
+    "surahName": "المؤمنون",
+    "type": "مكية",
+    "ayahNumbers": 118
+  },
+  {
+    "surahNumber": 24,
+    "surahName": "النور",
+    "type": "مدنية",
+    "ayahNumbers": 64
+  },
+  {
+    "surahNumber": 25,
+    "surahName": "الفرقان",
+    "type": "مكية",
+    "ayahNumbers": 77
+  },
+  {
+    "surahNumber": 26,
+    "surahName": "الشعراء",
+    "type": "مكية",
+    "ayahNumbers": 227
+  },
+  {
+    "surahNumber": 27,
+    "surahName": "النمل",
+    "type": "مكية",
+    "ayahNumbers": 93
+  },
+  {
+    "surahNumber": 28,
+    "surahName": "القصص",
+    "type": "مكية",
+    "ayahNumbers": 88
+  },
+  {
+    "surahNumber": 29,
+    "surahName": "العنكبوت",
+    "type": "مكية",
+    "ayahNumbers": 69
+  },
+  {
+    "surahNumber": 30,
+    "surahName": "الروم",
+    "type": "مكية",
+    "ayahNumbers": 60
+  },
+  {
+    "surahNumber": 31,
+    "surahName": "لقمان",
+    "type": "مكية",
+    "ayahNumbers": 34
+  },
+  {
+    "surahNumber": 32,
+    "surahName": "السجدة",
+    "type": "مكية",
+    "ayahNumbers": 30
+  },
+  {
+    "surahNumber": 33,
+    "surahName": "الأحزاب",
+    "type": "مدنية",
+    "ayahNumbers": 73
+  },
+  {
+    "surahNumber": 34,
+    "surahName": "سبأ",
+    "type": "مكية",
+    "ayahNumbers": 54
+  },
+  {
+    "surahNumber": 35,
+    "surahName": "فاطر",
+    "type": "مكية",
+    "ayahNumbers": 45
+  },
+  {
+    "surahNumber": 36,
+    "surahName": "يس",
+    "type": "مكية",
+    "ayahNumbers": 83
+  },
+  {
+    "surahNumber": 37,
+    "surahName": "الصافات",
+    "type": "مكية",
+    "ayahNumbers": 182
+  },
+  {
+    "surahNumber": 38,
+    "surahName": "ص",
+    "type": "مكية",
+    "ayahNumbers": 88
+  },
+  {
+    "surahNumber": 39,
+    "surahName": "الزمر",
+    "type": "مكية",
+    "ayahNumbers": 75
+  },
+  {
+    "surahNumber": 40,
+    "surahName": "غافر",
+    "type": "مكية",
+    "ayahNumbers": 85
+  },
+  {
+    "surahNumber": 41,
+    "surahName": "فصلت",
+    "type": "مكية",
+    "ayahNumbers": 54
+  },
+  {
+    "surahNumber": 42,
+    "surahName": "الشورى",
+    "type": "مكية",
+    "ayahNumbers": 53
+  },
+  {
+    "surahNumber": 43,
+    "surahName": "الزخرف",
+    "type": "مكية",
+    "ayahNumbers": 89
+  },
+  {
+    "surahNumber": 44,
+    "surahName": "الدخان",
+    "type": "مكية",
+    "ayahNumbers": 59
+  },
+  {
+    "surahNumber": 45,
+    "surahName": "الجاثية",
+    "type": "مكية",
+    "ayahNumbers": 37
+  },
+  {
+    "surahNumber": 46,
+    "surahName": "الأحقاف",
+    "type": "مكية",
+    "ayahNumbers": 35
+  },
+  {
+    "surahNumber": 47,
+    "surahName": "محمد",
+    "type": "مدنية",
+    "ayahNumbers": 38
+  },
+  {
+    "surahNumber": 48,
+    "surahName": "الفتح",
+    "type": "مدنية",
+    "ayahNumbers": 29
+  },
+  {
+    "surahNumber": 49,
+    "surahName": "الحجرات",
+    "type": "مدنية",
+    "ayahNumbers": 18
+  },
+  {
+    "surahNumber": 50,
+    "surahName": "ق",
+    "type": "مكية",
+    "ayahNumbers": 45
+  },
+  {
+    "surahNumber": 51,
+    "surahName": "الذاريات",
+    "type": "مكية",
+    "ayahNumbers": 60
+  },
+  {
+    "surahNumber": 52,
+    "surahName": "الطور",
+    "type": "مكية",
+    "ayahNumbers": 49
+  },
+  {
+    "surahNumber": 53,
+    "surahName": "النجم",
+    "type": "مكية",
+    "ayahNumbers": 62
+  },
+  {
+    "surahNumber": 54,
+    "surahName": "القمر",
+    "type": "مكية",
+    "ayahNumbers": 55
+  },
+  {
+    "surahNumber": 55,
+    "surahName": "الرحمن",
+    "type": "مدنية",
+    "ayahNumbers": 78
+  },
+  {
+    "surahNumber": 56,
+    "surahName": "الواقعة",
+    "type": "مكية",
+    "ayahNumbers": 96
+  },
+  {
+    "surahNumber": 57,
+    "surahName": "الحديد",
+    "type": "مدنية",
+    "ayahNumbers": 29
+  },
+  {
+    "surahNumber": 58,
+    "surahName": "المجادلة",
+    "type": "مدنية",
+    "ayahNumbers": 22
+  },
+  {
+    "surahNumber": 59,
+    "surahName": "الحشر",
+    "type": "مدنية",
+    "ayahNumbers": 24
+  },
+  {
+    "surahNumber": 60,
+    "surahName": "الممتحنة",
+    "type": "مدنية",
+    "ayahNumbers": 13
+  },
+  {
+    "surahNumber": 61,
+    "surahName": "الصف",
+    "type": "مدنية",
+    "ayahNumbers": 14
+  },
+  {
+    "surahNumber": 62,
+    "surahName": "الجمعة",
+    "type": "مدنية",
+    "ayahNumbers": 11
+  },
+  {
+    "surahNumber": 63,
+    "surahName": "المنافقون",
+    "type": "مدنية",
+    "ayahNumbers": 11
+  },
+  {
+    "surahNumber": 64,
+    "surahName": "التغابن",
+    "type": "مدنية",
+    "ayahNumbers": 18
+  },
+  {
+    "surahNumber": 65,
+    "surahName": "الطلاق",
+    "type": "مدنية",
+    "ayahNumbers": 12
+  },
+  {
+    "surahNumber": 66,
+    "surahName": "التحريم",
+    "type": "مدنية",
+    "ayahNumbers": 12
+  },
+  {
+    "surahNumber": 67,
+    "surahName": "الملك",
+    "type": "مكية",
+    "ayahNumbers": 30
+  },
+  {
+    "surahNumber": 68,
+    "surahName": "القلم",
+    "type": "مكية",
+    "ayahNumbers": 52
+  },
+  {
+    "surahNumber": 69,
+    "surahName": "الحاقة",
+    "type": "مكية",
+    "ayahNumbers": 52
+  },
+  {
+    "surahNumber": 70,
+    "surahName": "المعارج",
+    "type": "مكية",
+    "ayahNumbers": 44
+  },
+  {
+    "surahNumber": 71,
+    "surahName": "نوح",
+    "type": "مكية",
+    "ayahNumbers": 28
+  },
+  {
+    "surahNumber": 72,
+    "surahName": "الجن",
+    "type": "مكية",
+    "ayahNumbers": 28
+  },
+  {
+    "surahNumber": 73,
+    "surahName": "المزمل",
+    "type": "مكية",
+    "ayahNumbers": 20
+  },
+  {
+    "surahNumber": 74,
+    "surahName": "المدثر",
+    "type": "مكية",
+    "ayahNumbers": 56
+  },
+  {
+    "surahNumber": 75,
+    "surahName": "القيامة",
+    "type": "مكية",
+    "ayahNumbers": 40
+  },
+  {
+    "surahNumber": 76,
+    "surahName": "الإنسان",
+    "type": "مدنية",
+    "ayahNumbers": 31
+  },
+  {
+    "surahNumber": 77,
+    "surahName": "المرسلات",
+    "type": "مكية",
+    "ayahNumbers": 50
+  },
+  {
+    "surahNumber": 78,
+    "surahName": "النبأ",
+    "type": "مكية",
+    "ayahNumbers": 40
+  },
+  {
+    "surahNumber": 79,
+    "surahName": "النازعات",
+    "type": "مكية",
+    "ayahNumbers": 46
+  },
+  {
+    "surahNumber": 80,
+    "surahName": "عبس",
+    "type": "مكية",
+    "ayahNumbers": 42
+  },
+  {
+    "surahNumber": 81,
+    "surahName": "التكوير",
+    "type": "مكية",
+    "ayahNumbers": 29
+  },
+  {
+    "surahNumber": 82,
+    "surahName": "الانفطار",
+    "type": "مكية",
+    "ayahNumbers": 19
+  },
+  {
+    "surahNumber": 83,
+    "surahName": "المطففين",
+    "type": "مكية",
+    "ayahNumbers": 36
+  },
+  {
+    "surahNumber": 84,
+    "surahName": "الانشقاق",
+    "type": "مكية",
+    "ayahNumbers": 25
+  },
+  {
+    "surahNumber": 85,
+    "surahName": "البروج",
+    "type": "مكية",
+    "ayahNumbers": 22
+  },
+  {
+    "surahNumber": 86,
+    "surahName": "الطارق",
+    "type": "مكية",
+    "ayahNumbers": 17
+  },
+  {
+    "surahNumber": 87,
+    "surahName": "الأعلى",
+    "type": "مكية",
+    "ayahNumbers": 19
+  },
+  {
+    "surahNumber": 88,
+    "surahName": "الغاشية",
+    "type": "مكية",
+    "ayahNumbers": 26
+  },
+  {
+    "surahNumber": 89,
+    "surahName": "الفجر",
+    "type": "مكية",
+    "ayahNumbers": 30
+  },
+  {
+    "surahNumber": 90,
+    "surahName": "البلد",
+    "type": "مكية",
+    "ayahNumbers": 20
+  },
+  {
+    "surahNumber": 91,
+    "surahName": "الشمس",
+    "type": "مكية",
+    "ayahNumbers": 15
+  },
+  {
+    "surahNumber": 92,
+    "surahName": "الليل",
+    "type": "مكية",
+    "ayahNumbers": 21
+  },
+  {
+    "surahNumber": 93,
+    "surahName": "الضحى",
+    "type": "مكية",
+    "ayahNumbers": 11
+  },
+  {
+    "surahNumber": 94,
+    "surahName": "الشرح",
+    "type": "مكية",
+    "ayahNumbers": 8
+  },
+  {
+    "surahNumber": 95,
+    "surahName": "التين",
+    "type": "مكية",
+    "ayahNumbers": 8
+  },
+  {
+    "surahNumber": 96,
+    "surahName": "العلق",
+    "type": "مكية",
+    "ayahNumbers": 19
+  },
+  {
+    "surahNumber": 97,
+    "surahName": "القدر",
+    "type": "مكية",
+    "ayahNumbers": 5
+  },
+  {
+    "surahNumber": 98,
+    "surahName": "البينة",
+    "type": "مدنية",
+    "ayahNumbers": 8
+  },
+  {
+    "surahNumber": 99,
+    "surahName": "الزلزلة",
+    "type": "مدنية",
+    "ayahNumbers": 8
+  },
+  {
+    "surahNumber": 100,
+    "surahName": "العاديات",
+    "type": "مكية",
+    "ayahNumbers": 11
+  },
+  {
+    "surahNumber": 101,
+    "surahName": "القارعة",
+    "type": "مكية",
+    "ayahNumbers": 11
+  },
+  {
+    "surahNumber": 102,
+    "surahName": "التكاثر",
+    "type": "مكية",
+    "ayahNumbers": 8
+  },
+  {
+    "surahNumber": 103,
+    "surahName": "العصر",
+    "type": "مكية",
+    "ayahNumbers": 3
+  },
+  {
+    "surahNumber": 104,
+    "surahName": "الهمزة",
+    "type": "مكية",
+    "ayahNumbers": 9
+  },
+  {
+    "surahNumber": 105,
+    "surahName": "الفيل",
+    "type": "مكية",
+    "ayahNumbers": 5
+  },
+  {
+    "surahNumber": 106,
+    "surahName": "قريش",
+    "type": "مكية",
+    "ayahNumbers": 4
+  },
+  {
+    "surahNumber": 107,
+    "surahName": "الماعون",
+    "type": "مكية",
+    "ayahNumbers": 7
+  },
+  {
+    "surahNumber": 108,
+    "surahName": "الكوثر",
+    "type": "مكية",
+    "ayahNumbers": 3
+  },
+  {
+    "surahNumber": 109,
+    "surahName": "الكافرون",
+    "type": "مكية",
+    "ayahNumbers": 6
+  },
+  {
+    "surahNumber": 110,
+    "surahName": "النصر",
+    "type": "مدنية",
+    "ayahNumbers": 3
+  },
+  {
+    "surahNumber": 111,
+    "surahName": "المسد",
+    "type": "مكية",
+    "ayahNumbers": 5
+  },
+  {
+    "surahNumber": 112,
+    "surahName": "الإخلاص",
+    "type": "مكية",
+    "ayahNumbers": 4
+  },
+  {
+    "surahNumber": 113,
+    "surahName": "الفلق",
+    "type": "مكية",
+    "ayahNumbers": 5
+  },
+  {
+    "surahNumber": 114,
+    "surahName": "الناس",
+    "type": "مكية",
+    "ayahNumbers": 6
+  }
+]

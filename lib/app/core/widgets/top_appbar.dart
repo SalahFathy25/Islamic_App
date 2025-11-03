@@ -9,33 +9,41 @@ import '../utils/app_colors.dart';
 
 class TopAppbar extends StatelessWidget {
   final Widget icon;
+  final VoidCallback onTap;
 
-  const TopAppbar({super.key, required this.icon});
+  const TopAppbar({super.key, required this.icon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Assets.images.icons.appIcon.svg(width: 35.0.w, height: 35.0.h),
-                Assets.images.appName.image(width: 90.0.w, height: 36.0.h),
-              ],
-            ),
-            Text(
-              AppStrings.welcomeBack,
-              style: AppFontStyle.fontAlmarai14w700White.copyWith(
-                color: AppColors.white.withAlpha(90),
+    return SizedBox(
+      height: 65.h,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Assets.images.icons.appIcon.svg(
+                    width: 35.0.w,
+                    height: 35.0.h,
+                  ),
+                  Assets.images.appName.image(width: 90.0.w, height: 36.0.h),
+                ],
               ),
-            ),
-          ],
-        ),
-        smallContainer(icon),
-      ],
+              Text(
+                AppStrings.welcomeBack,
+                style: AppFontStyle.fontAlmarai14w700White.copyWith(
+                  color: AppColors.white.withAlpha(90),
+                ),
+              ),
+            ],
+          ),
+          smallContainer(icon: icon, onTap: onTap),
+        ],
+      ),
     );
   }
 }

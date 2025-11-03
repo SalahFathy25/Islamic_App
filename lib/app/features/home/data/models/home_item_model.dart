@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/app/core/routes/routes.dart';
 
 import '../../../../../gen/assets.gen.dart';
 import '../../../../core/utils/app_strings.dart';
@@ -6,7 +7,7 @@ import '../../../../core/utils/app_strings.dart';
 class HomeItemModel {
   final String title;
   final Widget image;
-  final Widget nextScreen;
+  final String nextScreen;
 
   HomeItemModel({
     required this.title,
@@ -19,27 +20,27 @@ final List<HomeItemModel> shortcutItems = [
   HomeItemModel(
     image: Assets.images.homeImages.quranImage.image(),
     title: AppStrings.quranTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.prayerImage.image(),
     title: AppStrings.prayerTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.azkaarImage.image(),
     title: AppStrings.azkaarTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.zakaahImage.image(),
     title: AppStrings.zakaahTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.hagImage.image(),
     title: AppStrings.hagTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
 ];
 
@@ -47,31 +48,31 @@ final List<HomeItemModel> doaasItems = [
   HomeItemModel(
     image: Assets.images.homeImages.duaaMotauafiImage.image(),
     title: AppStrings.doaaForDeathTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaOutOfHomeImage.image(),
     title: AppStrings.doaaForGoOutTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaArafaImage.image(),
     title: AppStrings.doaaForArafaaTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaFridayImage.image(),
     title: AppStrings.doaaForFridayTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaSafarImage.image(),
     title: AppStrings.doaaForTravelTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaShefaaImage.image(),
     title: AppStrings.doaaForHealthTitle,
-    nextScreen: Scaffold(),
+    nextScreen: Routes.quranScreen,
   ),
 ];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/app/core/routes/routes.dart';
+import 'package:islamic_app/app/features/quran/presentation/screens/quran_home_screen.dart';
 
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
@@ -17,9 +18,7 @@ abstract class AppRouter {
           builder: (context) => const Center(child: Text("Azkar Screen")),
         );
       case Routes.quranScreen:
-        return MaterialPageRoute(
-          builder: (context) => const Center(child: Text("Quran Screen")),
-        );
+        return MaterialPageRoute(builder: (context) => const QuranHomeScreen());
       case Routes.prayerScreen:
         return MaterialPageRoute(
           builder: (context) => const Center(child: Text("Prayer Screen")),

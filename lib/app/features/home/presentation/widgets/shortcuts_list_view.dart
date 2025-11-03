@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/app/core/extensions/distance_extension.dart';
 import 'package:islamic_app/app/features/home/presentation/widgets/shortcut_item.dart';
 
-import '../../data/models/shortcut_item_model.dart';
+import '../../data/models/home_item_model.dart';
 
 class ShortcutsListView extends StatelessWidget {
   const ShortcutsListView({super.key});

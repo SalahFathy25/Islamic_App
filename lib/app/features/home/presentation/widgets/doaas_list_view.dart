@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/app/core/extensions/distance_extension.dart';
 
-import '../../data/models/shortcut_item_model.dart';
+import '../../data/models/home_item_model.dart';
 import 'doaa_item.dart';
 
 class DoaasListView extends StatelessWidget {

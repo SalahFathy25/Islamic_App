@@ -24,7 +24,10 @@ class HomeAppbar extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TopAppbar(icon: Assets.images.icons.notificationIcon.svg()),
+                TopAppbar(
+                  icon: Assets.images.icons.notificationIcon.svg(),
+                  onTap: () {},
+                ),
                 16.isHeight,
                 SearchHomeAppBar(),
               ],

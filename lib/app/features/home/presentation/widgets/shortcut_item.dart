@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/app/core/utils/app_colors.dart';
 import 'package:islamic_app/app/core/utils/font_style.dart';
 
-import '../../data/models/shortcut_item_model.dart';
+import '../../data/models/home_item_model.dart';
 
 class ShortcutItem extends StatelessWidget {
   const ShortcutItem({super.key, required this.model});
