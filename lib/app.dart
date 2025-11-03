@@ -27,6 +27,7 @@ class IslamicApp extends StatelessWidget {
           ],
           supportedLocales: S.delegate.supportedLocales,
           locale: const Locale('ar'),
+          theme: ThemeData(useMaterial3: false),
           title: 'Islamic App',
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: Routes.splash,

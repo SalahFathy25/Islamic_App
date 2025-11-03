@@ -12,7 +12,7 @@ void main() async {
   services();
   // runApp(const IslamicApp());
   runApp(
-    DevicePreview(enabled: true, builder: (context) => const IslamicApp()),
+    DevicePreview(enabled: false, builder: (context) => const IslamicApp()),
   );
 }
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/app/core/utils/app_colors.dart';
 import 'package:islamic_app/app/core/utils/font_style.dart';
+import 'package:quran_library/quran.dart';
 
 class SurahItem extends StatelessWidget {
   final int surahNumber;
@@ -20,9 +21,31 @@ class SurahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: ()=> ,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SurahDisplayScreen(
+              parentContext: context,
+              surahNumber: surahNumber,
+              onPageChanged: (int pageIndex) {},
+              isDark: false,
+              basmalaStyle: BasmalaStyle(
+                basmalaColor: Colors.black,
+                basmalaWidth: 160.0,
+                basmalaHeight: 30.0,
+              ),
+              bannerStyle: BannerStyle(
+                isImage: false,
+                bannerSvgHeight: 40.0,
+                bannerSvgWidth: 150.0,
+              ),
+            ),
+          ),
+        );
+      },
       child: Container(
-        height: 70.h,
+        height: 75.h,
         padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
           color: AppColors.lightBlueColor.withValues(alpha: 0.01),
