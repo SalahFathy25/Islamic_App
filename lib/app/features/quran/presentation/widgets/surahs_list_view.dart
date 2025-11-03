@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/app/core/extensions/distance_extension.dart';
 import '../../data/models/surah_item_model.dart';
 
-import '../../data/repos/surah_services.dart';
+import '../../data/repos/surah_repos.dart';
 import 'surah_item.dart';
 
 class SurahsListView extends StatefulWidget {
