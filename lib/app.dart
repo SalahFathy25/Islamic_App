@@ -5,8 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'app/core/localization/generated/l10n.dart';
 import 'app/core/routes/app_router.dart';
 import 'app/core/routes/routes.dart';
-import 'app/features/home/presentation/screens/home_screen.dart';
-import 'app/features/splash/presentation/screens/splash_screen.dart';
 
 class IslamicApp extends StatelessWidget {
   const IslamicApp({super.key});
