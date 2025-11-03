@@ -57,7 +57,6 @@ class _QuranHomeScreenState extends State<QuranHomeScreen> {
                 setState(() => selectedIndex = index);
               },
               children: [
-                // Center(child: SurahItem()),
                 SurahsListView(),
                 Center(
                   child: Text(
