@@ -34,15 +34,13 @@ class SurahItem extends StatelessWidget {
         height: 75.h,
         padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
-          color: AppColors.lightBlueColor.withValues(alpha: 0.01),
-          border: Border.all(
-            color: AppColors.lightBlueBorderColor.withValues(alpha: 0.3),
-          ),
+          color: const Color(0xFFF8FBFF),
+          border: Border.all(color: const Color(0xFFBBD6FF)),
           borderRadius: BorderRadius.circular(8.0.r),
           boxShadow: [
             BoxShadow(
-              color: Color(0xff064BFF).withValues(alpha: 0.25),
-              blurRadius: 4.0.r,
+              color: Colors.blue.withValues(alpha: 0.1),
+              blurRadius: 3,
               offset: const Offset(0, 1),
             ),
           ],

@@ -4,8 +4,8 @@ import '../extensions/hex_colors.dart';
 
 abstract class AppColors {
   static final mainColor = HexColor("#081537");
-  static final lightBlueColor = HexColor("#5C89FF");
-  static final lightBlueBorderColor = HexColor("#0047FF");
+  static final lightBlueColor = HexColor("#F8FBFF");
+  static final lightBlueBorderColor = HexColor("#BBD6FF");
   static final pinkColor = HexColor("#F20091");
   static final pinkColor2 = HexColor("#FFA1A1");
   static final prayerContainer = HexColor("#FFF2FE");
@@ -16,5 +16,6 @@ abstract class AppColors {
   static const gray = Colors.grey;
   static const black = Colors.black;
   static const red = Colors.red;
+  static const blue = Colors.blue;
   static const noColor = Colors.transparent;
 }
