@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/app/core/extensions/distance_extension.dart';
+import 'package:islamic_app/app/core/flutter_quran/src/utils/flutter_quran_utils.dart';
 import 'package:islamic_app/app/core/widgets/app_app_bar.dart';
 import 'package:islamic_app/app/features/quran/presentation/widgets/quran_tab_bar.dart';
-import 'package:islamic_app/app/features/quran/presentation/widgets/surah_item.dart';
 import 'package:islamic_app/app/features/quran/presentation/widgets/surahs_list_view.dart';
-import 'package:quran_library/quran.dart';
 
 class QuranHomeScreen extends StatefulWidget {
   const QuranHomeScreen({super.key});
@@ -21,7 +19,7 @@ class _QuranHomeScreenState extends State<QuranHomeScreen> {
   @override
   void initState() {
     super.initState();
-    QuranLibrary.init();
+    FlutterQuran().init();
     _pageController = PageController();
   }
 

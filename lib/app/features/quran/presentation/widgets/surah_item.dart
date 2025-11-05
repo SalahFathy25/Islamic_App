@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/app/core/utils/app_colors.dart';
 import 'package:islamic_app/app/core/utils/font_style.dart';
-import 'package:quran_library/quran.dart';
+
+import '../../../../core/flutter_quran/src/flutter_quran_screen.dart';
 
 class SurahItem extends StatelessWidget {
   final int surahNumber;
@@ -25,22 +26,7 @@ class SurahItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SurahDisplayScreen(
-              parentContext: context,
-              surahNumber: surahNumber,
-              onPageChanged: (int pageIndex) {},
-              isDark: false,
-              basmalaStyle: BasmalaStyle(
-                basmalaColor: Colors.black,
-                basmalaWidth: 160.0,
-                basmalaHeight: 30.0,
-              ),
-              bannerStyle: BannerStyle(
-                isImage: false,
-                bannerSvgHeight: 40.0,
-                bannerSvgWidth: 150.0,
-              ),
-            ),
+            builder: (context) => FlutterQuranScreen(initialSurah: surahNumber),
           ),
         );
       },

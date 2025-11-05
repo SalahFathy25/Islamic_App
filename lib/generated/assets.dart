@@ -2,7 +2,6 @@
 class Assets {
   Assets._();
 
-  static const String dataSurahs = 'assets/data/surahs.json';
   static const String fontsAlmaraiBold = 'assets/fonts/Almarai-Bold.ttf';
   static const String fontsAlmaraiExtraBold =
       'assets/fonts/Almarai-ExtraBold.ttf';
@@ -63,5 +62,7 @@ class Assets {
   static const String imagesAppName = 'assets/images/app_name.png';
   static const String imagesTopAppbar = 'assets/images/top_appbar.svg';
   static const String imagesTopHomeAppbar = 'assets/images/top_home_appbar.svg';
+  static const String jsonsQuranHafs = 'assets/jsons/quran_hafs.json';
+  static const String jsonsSurahs = 'assets/jsons/surahs.json';
   static const String soundsSplashAudio = 'assets/sounds/splash_audio.mp3';
 }
