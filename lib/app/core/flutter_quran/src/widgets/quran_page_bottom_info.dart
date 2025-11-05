@@ -1,11 +1,12 @@
 part of '../flutter_quran_screen.dart';
 
 class QuranPageBottomInfoWidget extends StatefulWidget {
-  const QuranPageBottomInfoWidget(
-      {required this.surahName,
-      required this.page,
-      required this.hizb,
-      super.key});
+  const QuranPageBottomInfoWidget({
+    required this.surahName,
+    required this.page,
+    required this.hizb,
+    super.key,
+  });
 
   final String surahName;
   final int page;
@@ -41,27 +42,40 @@ class _QuranPageBottomInfoWidgetState extends State<QuranPageBottomInfoWidget> {
               ? FittedBox(
                   child: Text(
                     hizbText,
-                    style: FlutterQuran()
-                        .hafsStyle
-                        .copyWith(color: const Color(0xFF081537)),
+                    style: FlutterQuran().hafsStyle.copyWith(
+                      color: const Color(0xFF081537),
+                    ),
                   ),
                 )
               : null,
         ),
-        Text(widget.page.toString().toArabic(),
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            )),
+        Container(
+          width: 35,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: Colors.black, width: 1),
+          ),
+          child: Center(
+            child: Text(
+              widget.page.toString().toArabic(),
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
         SizedBox(
           width: 100,
           height: 41,
           child: FittedBox(
-            child: Text('سورة ${widget.surahName}',
-                style: FlutterQuran()
-                    .hafsStyle
-                    .copyWith(color: const Color(0xFF081537))),
+            child: Text(
+              'سورة ${widget.surahName}',
+              style: FlutterQuran().hafsStyle.copyWith(
+                color: const Color(0xFF081537),
+              ),
+            ),
           ),
         ),
       ],

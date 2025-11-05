@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/generated/assets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../app_bloc.dart';
@@ -136,8 +137,7 @@ class FlutterQuran {
   final hafsStyle = const TextStyle(
     color: Colors.black,
     fontSize: 23.55,
-    fontFamily: "hafs",
-    package: "flutter_quran",
+    fontFamily: Assets.jsonsQuranHafs,
   );
 
   ///Singleton factory
