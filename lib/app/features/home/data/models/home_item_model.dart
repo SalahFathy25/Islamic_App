@@ -25,22 +25,22 @@ final List<HomeItemModel> shortcutItems = [
   HomeItemModel(
     image: Assets.images.homeImages.prayerImage.image(),
     title: AppStrings.prayerTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.azkaarImage.image(),
     title: AppStrings.azkaarTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.zakaahImage.image(),
     title: AppStrings.zakaahTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.hagImage.image(),
     title: AppStrings.hagTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
 ];
 
@@ -48,31 +48,31 @@ final List<HomeItemModel> doaasItems = [
   HomeItemModel(
     image: Assets.images.homeImages.duaaMotauafiImage.image(),
     title: AppStrings.doaaForDeathTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaOutOfHomeImage.image(),
     title: AppStrings.doaaForGoOutTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaArafaImage.image(),
     title: AppStrings.doaaForArafaaTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaFridayImage.image(),
     title: AppStrings.doaaForFridayTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaSafarImage.image(),
     title: AppStrings.doaaForTravelTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
   HomeItemModel(
     image: Assets.images.homeImages.doaaShefaaImage.image(),
     title: AppStrings.doaaForHealthTitle,
-    nextScreen: Routes.quranScreen,
+    nextScreen: Routes.homeScreen,
   ),
 ];

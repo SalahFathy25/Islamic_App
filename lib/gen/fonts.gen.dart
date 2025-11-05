@@ -22,4 +22,7 @@ class FontFamily {
 
   /// Font family: ReemKufi
   static const String reemKufi = 'ReemKufi';
+
+  /// Font family: hafs
+  static const String hafs = 'hafs';
 }

@@ -3,6 +3,7 @@ import 'package:islamic_app/app/core/extensions/distance_extension.dart';
 import 'package:islamic_app/app/core/flutter_quran/src/utils/flutter_quran_utils.dart';
 import 'package:islamic_app/app/core/widgets/app_app_bar.dart';
 import 'package:islamic_app/app/features/quran/presentation/widgets/quran_tab_bar.dart';
+import 'package:islamic_app/app/features/quran/presentation/widgets/sheikhs_grid_view.dart';
 import 'package:islamic_app/app/features/quran/presentation/widgets/surahs_list_view.dart';
 
 class QuranHomeScreen extends StatefulWidget {
@@ -54,15 +55,7 @@ class _QuranHomeScreenState extends State<QuranHomeScreen> {
               onPageChanged: (index) {
                 setState(() => selectedIndex = index);
               },
-              children: [
-                SurahsListView(),
-                Center(
-                  child: Text(
-                    'محتوى مشايخ التلاوة',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
-              ],
+              children: [SurahsListView(), SheikhsGridView()],
             ),
           ),
         ],

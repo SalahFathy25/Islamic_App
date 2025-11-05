@@ -67,6 +67,7 @@ flutter:
     - assets/sounds/
     - assets/fonts/
     - assets/jsons/
+    - assets/images/sheikhs/
     - lib/app/core/flutter_quran/assets/fonts/
     - lib/app/core/flutter_quran/assets/images/
 

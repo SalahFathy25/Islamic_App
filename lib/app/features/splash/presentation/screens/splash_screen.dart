@@ -22,13 +22,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await player.setSource(
-        AssetSource(Assets.sounds.splashAudio.replaceFirst('assets/', '')),
+        AssetSource(Assets.sounds.newSplashAudio.replaceFirst('assets/', '')),
       );
       await player.setVolume(1.0);
       await player.resume();
     });
 
-    Future.delayed(const Duration(seconds: 15), () {
+    Future.delayed(const Duration(seconds: 21), () {
       Navigator.pushReplacementNamed(context, Routes.homeScreen);
       // CustomNavigator.instance.pushReplacementNamed(Routes.homeScreen);
     });

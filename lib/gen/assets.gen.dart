@@ -14,14 +14,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
-class $AssetsDataGen {
-  const $AssetsDataGen();
+class $LibGen {
+  const $LibGen();
 
-  /// File path: assets/data/surahs.json
-  String get surahs => 'assets/data/surahs.json';
-
-  /// List of all assets
-  List<String> get values => [surahs];
+  /// Directory path: lib/app
+  $LibAppGen get app => const $LibAppGen();
 }
 
 class $AssetsFontsGen {
@@ -114,6 +111,9 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/icons
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
+  /// Directory path: assets/images/sheikhs
+  $AssetsImagesSheikhsGen get sheikhs => const $AssetsImagesSheikhsGen();
+
   /// File path: assets/images/top_appbar.svg
   SvgGenImage get topAppbar =>
       const SvgGenImage('assets/images/top_appbar.svg');
@@ -126,14 +126,37 @@ class $AssetsImagesGen {
   List<dynamic> get values => [appName, topAppbar, topHomeAppbar];
 }
 
+class $AssetsJsonsGen {
+  const $AssetsJsonsGen();
+
+  /// File path: assets/jsons/quran_hafs.json
+  String get quranHafs => 'assets/jsons/quran_hafs.json';
+
+  /// File path: assets/jsons/surahs.json
+  String get surahs => 'assets/jsons/surahs.json';
+
+  /// List of all assets
+  List<String> get values => [quranHafs, surahs];
+}
+
 class $AssetsSoundsGen {
   const $AssetsSoundsGen();
+
+  /// File path: assets/sounds/new_splash_audio.mp3
+  String get newSplashAudio => 'assets/sounds/new_splash_audio.mp3';
 
   /// File path: assets/sounds/splash_audio.mp3
   String get splashAudio => 'assets/sounds/splash_audio.mp3';
 
   /// List of all assets
-  List<String> get values => [splashAudio];
+  List<String> get values => [newSplashAudio, splashAudio];
+}
+
+class $LibAppGen {
+  const $LibAppGen();
+
+  /// Directory path: lib/app/core
+  $LibAppCoreGen get core => const $LibAppCoreGen();
 }
 
 class $AssetsImagesHomeImagesGen {
@@ -253,13 +276,75 @@ class $AssetsImagesIconsGen {
   ];
 }
 
+class $AssetsImagesSheikhsGen {
+  const $AssetsImagesSheikhsGen();
+
+  /// File path: assets/images/sheikhs/khaled_elgaleel.jpg
+  AssetGenImage get khaledElgaleel =>
+      const AssetGenImage('assets/images/sheikhs/khaled_elgaleel.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [khaledElgaleel];
+}
+
+class $LibAppCoreGen {
+  const $LibAppCoreGen();
+
+  /// Directory path: lib/app/core/flutter_quran
+  $LibAppCoreFlutterQuranGen get flutterQuran =>
+      const $LibAppCoreFlutterQuranGen();
+}
+
+class $LibAppCoreFlutterQuranGen {
+  const $LibAppCoreFlutterQuranGen();
+
+  /// Directory path: lib/app/core/flutter_quran/assets
+  $LibAppCoreFlutterQuranAssetsGen get assets =>
+      const $LibAppCoreFlutterQuranAssetsGen();
+}
+
+class $LibAppCoreFlutterQuranAssetsGen {
+  const $LibAppCoreFlutterQuranAssetsGen();
+
+  /// Directory path: lib/app/core/flutter_quran/assets/fonts
+  $LibAppCoreFlutterQuranAssetsFontsGen get fonts =>
+      const $LibAppCoreFlutterQuranAssetsFontsGen();
+
+  /// Directory path: lib/app/core/flutter_quran/assets/images
+  $LibAppCoreFlutterQuranAssetsImagesGen get images =>
+      const $LibAppCoreFlutterQuranAssetsImagesGen();
+}
+
+class $LibAppCoreFlutterQuranAssetsFontsGen {
+  const $LibAppCoreFlutterQuranAssetsFontsGen();
+
+  /// File path: lib/app/core/flutter_quran/assets/fonts/hafs.ttf
+  String get hafs => 'lib/app/core/flutter_quran/assets/fonts/hafs.ttf';
+
+  /// List of all assets
+  List<String> get values => [hafs];
+}
+
+class $LibAppCoreFlutterQuranAssetsImagesGen {
+  const $LibAppCoreFlutterQuranAssetsImagesGen();
+
+  /// File path: lib/app/core/flutter_quran/assets/images/surah_header.png
+  AssetGenImage get surahHeader => const AssetGenImage(
+    'lib/app/core/flutter_quran/assets/images/surah_header.png',
+  );
+
+  /// List of all assets
+  List<AssetGenImage> get values => [surahHeader];
+}
+
 class Assets {
   const Assets._();
 
-  static const $AssetsDataGen data = $AssetsDataGen();
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsJsonsGen jsons = $AssetsJsonsGen();
   static const $AssetsSoundsGen sounds = $AssetsSoundsGen();
+  static const $LibGen lib = $LibGen();
 }
 
 class AssetGenImage {

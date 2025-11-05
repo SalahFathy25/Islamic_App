@@ -6,7 +6,6 @@ import 'package:islamic_app/app/core/configurations/shared_preferences.dart';
 import 'package:islamic_app/app/core/routes/bloc_observer.dart';
 
 import 'app.dart';
-import 'app/core/helper/size_config_helper.dart';
 
 void main() async {
   services();
