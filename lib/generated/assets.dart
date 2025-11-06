@@ -89,8 +89,6 @@ class Assets {
       'assets/fonts/ReemKufiFun-SemiBold.ttf';
   static const String functionsFunctions =
       'lib/app/core/functions/functions.dart';
-  // static const String genAssets.gen = 'lib/gen/assets.gen.dart';
-  // static const String genFonts.gen = 'lib/gen/fonts.gen.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
   static const String generatedL10n =
       'lib/app/core/localization/generated/l10n.dart';
@@ -147,6 +145,7 @@ class Assets {
   static const String l10nIntlAr = 'lib/app/core/localization/l10n/intl_ar.arb';
   static const String l10nIntlEn = 'lib/app/core/localization/l10n/intl_en.arb';
   static const String libApp = 'lib/app.dart';
+  static const String libAppServices = 'lib/app_services.dart';
   static const String libMain = 'lib/main.dart';
   static const String modelsAyah =
       'lib/app/core/flutter_quran/src/models/ayah.dart';
@@ -166,7 +165,6 @@ class Assets {
       'lib/app/features/quran/data/models/surah_item_model.dart';
   static const String networkApiErrorModel =
       'lib/app/core/network/api_error_model.dart';
-  // static const String networkApiErrorModel.g = 'lib/app/core/network/api_error_model.g.dart';
   static const String networkApiResult = 'lib/app/core/network/api_result.dart';
   static const String networkDioFactory =
       'lib/app/core/network/dio_factory.dart';
