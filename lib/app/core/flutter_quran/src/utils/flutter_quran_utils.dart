@@ -137,7 +137,7 @@ class FlutterQuran {
   final hafsStyle = const TextStyle(
     color: Colors.black,
     fontSize: 23.55,
-    fontFamily: Assets.jsonsQuranHafs,
+    fontFamily: 'Hafs',
   );
 
   ///Singleton factory

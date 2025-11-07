@@ -99,6 +99,6 @@ flutter:
     - family: AmiriQuran
       fonts:
         - asset: assets/fonts/AmiriQuran-Regular.ttf
-    - family: hafs
+    - family: Hafs
       fonts:
         - asset: lib/app/core/flutter_quran/assets/fonts/hafs.ttf
