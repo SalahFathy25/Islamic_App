@@ -50,7 +50,8 @@ class _QuranPageBottomInfoWidgetState extends State<QuranPageBottomInfoWidget> {
               : null,
         ),
         Container(
-          width: 35,
+          // height: 50,
+          padding: EdgeInsets.symmetric(vertical: 3, horizontal: 5),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.black, width: 1),
