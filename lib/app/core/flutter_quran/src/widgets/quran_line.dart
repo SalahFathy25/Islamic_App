@@ -37,7 +37,7 @@ class QuranLine extends StatelessWidget {
                     } else {
                       showDialog(
                         context: context,
-                        builder: (ctx) => AyahLongClickDialog(ayah as Ayah),
+                        builder: (ctx) => AyahLongClickDialog(ayah),
                       );
                     }
                   }

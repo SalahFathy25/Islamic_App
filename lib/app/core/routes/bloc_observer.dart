@@ -7,7 +7,7 @@ final logger = Logger(
     errorMethodCount: 5,
     lineLength: 100,
     colors: true,
-    printEmojis: true,
+    printEmojis: false,
   ),
 );
 
@@ -38,11 +38,7 @@ class MyBlocObserver extends BlocObserver {
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    logger.e(
-      '❌ onError -- ${bloc.runtimeType}, error: $error',
-      error: error,
-      stackTrace: stackTrace,
-    );
+    logger.e('❌ onError -- ${bloc.runtimeType}, error: $error');
     super.onError(bloc, error, stackTrace);
   }
 

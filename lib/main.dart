@@ -8,6 +8,6 @@ void main() async {
   appServices();
   // runApp(const IslamicApp());
   runApp(
-    DevicePreview(enabled: false, builder: (context) => const IslamicApp()),
+    DevicePreview(enabled: true, builder: (context) => const IslamicApp()),
   );
 }
