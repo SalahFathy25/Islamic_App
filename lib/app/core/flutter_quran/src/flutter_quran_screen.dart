@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:islamic_app/app/core/flutter_quran/src/models/ayah.dart';
 import 'package:islamic_app/app/core/flutter_quran/src/models/bookmark.dart';

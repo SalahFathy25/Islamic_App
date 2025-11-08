@@ -1,7 +1,7 @@
 part of '../flutter_quran_screen.dart';
 
 class DefaultDrawer extends StatelessWidget {
-  const DefaultDrawer();
+  const DefaultDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +28,12 @@ class DefaultDrawer extends StatelessWidget {
                   icon: Icons.bookmark_outline_rounded,
                   children: List.generate(
                     jozzs.length,
-                        (jozzIndex) =>
-                        _buildJozzExpansionTile(
-                          jozzs[jozzIndex],
-                          jozzIndex,
-                          hizbs,
-                          context,
-                        ),
+                    (jozzIndex) => _buildJozzExpansionTile(
+                      jozzs[jozzIndex],
+                      jozzIndex,
+                      hizbs,
+                      context,
+                    ),
                   ),
                 ),
 
@@ -49,61 +48,14 @@ class DefaultDrawer extends StatelessWidget {
                   icon: Icons.library_books_rounded,
                   children: List.generate(
                     surahs.length,
-                        (index) =>
-                        _buildSurahTile(
-                          surahs[index],
-                          index,
-                          context,
-                        ),
+                    (index) => _buildSurahTile(surahs[index], index, context),
                   ),
                 ),
               ],
             ),
-
-            // العلامات Section
-            // _buildExpansionSection(
-            //   title: 'العلامات',
-            //   icon: Icons.bookmark_rounded,
-            //   children: [
-            //     Column(
-            //       children: FlutterQuran()
-            //           .getUsedBookmarks()
-            //           .map((bookmark) => _buildBookmarkTile(bookmark, context))
-            //           .toList(),
-            //     ),
-            //   ],
-            // ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildListTile({
-    required IconData icon,
-    required String title,
-    required VoidCallback onTap,
-  }) {
-    return ListTile(
-      leading: Icon(
-        icon,
-        color: Colors.blue[700],
-        size: 24,
-      ),
-      trailing: Icon(
-        Icons.arrow_forward_ios_rounded,
-        color: Colors.grey[600],
-        size: 16,
-      ),
-      title: Text(
-        title,
-        style: TextStyle(
-          fontWeight: FontWeight.w600,
-          fontSize: 16,
-          color: Colors.grey[800],
-        ),
-      ),
-      onTap: onTap,
     );
   }
 
@@ -115,27 +67,21 @@ class DefaultDrawer extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: ExpansionTile(
-        leading: Icon(
-          icon,
-          color: Colors.green[700],
-        ),
+        leading: Icon(icon, color: Colors.green[700]),
         title: Text(
           title,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 16,
+            fontSize: 16.sp,
             color: Colors.grey[800],
+            fontFamily: 'ReemKufi',
           ),
         ),
         collapsedIconColor: Colors.grey[600],
         iconColor: Colors.green[700],
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         tilePadding: const EdgeInsets.symmetric(horizontal: 16),
         childrenPadding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
         children: children,
@@ -154,8 +100,9 @@ class DefaultDrawer extends StatelessWidget {
         title,
         style: TextStyle(
           fontWeight: FontWeight.w600,
-          fontSize: 15,
+          fontSize: 15.sp,
           color: Colors.grey[700],
+          fontFamily: 'ReemKufi',
         ),
       ),
       collapsedIconColor: Colors.grey[500],
@@ -175,8 +122,9 @@ class DefaultDrawer extends StatelessWidget {
         title,
         style: TextStyle(
           fontWeight: FontWeight.w600,
-          fontSize: 15,
+          fontSize: 15.sp,
           color: Colors.grey[700],
+          fontFamily: 'ReemKufi',
         ),
       ),
       collapsedIconColor: Colors.grey[500],
@@ -185,17 +133,17 @@ class DefaultDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildJozzExpansionTile(String jozz,
-      int jozzIndex,
-      List<String> hizbs,
-      BuildContext context,) {
+  Widget _buildJozzExpansionTile(
+    String jozz,
+    int jozzIndex,
+    List<String> hizbs,
+    BuildContext context,
+  ) {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 2),
       elevation: 0,
       color: Colors.grey[50],
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: ExpansionTile(
         title: Row(
           children: [
@@ -218,9 +166,10 @@ class DefaultDrawer extends StatelessWidget {
             Expanded(
               child: Text(
                 jozz,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 15,
+                  fontSize: 15.sp,
+                  fontFamily: 'ReemKufi',
                 ),
               ),
             ),
@@ -268,9 +217,10 @@ class DefaultDrawer extends StatelessWidget {
         ),
         title: Text(
           hizb,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: 14,
+            fontSize: 14.sp,
+            fontFamily: 'ReemKufi',
           ),
         ),
         trailing: Icon(
@@ -310,19 +260,20 @@ class DefaultDrawer extends StatelessWidget {
             shape: BoxShape.circle,
           ),
           child: Text(
-            '${index + 1}',
+            '${index + 1}'.toArabic(),
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.orange[700],
-              fontSize: 12,
+              color: Colors.black,
+              fontSize: 14.sp,
             ),
           ),
         ),
         title: Text(
           surah,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: 15,
+            fontSize: 15.sp,
+            fontFamily: 'ReemKufi',
           ),
         ),
         trailing: Icon(
@@ -336,46 +287,6 @@ class DefaultDrawer extends StatelessWidget {
         },
         contentPadding: const EdgeInsets.symmetric(horizontal: 12),
         minLeadingWidth: 0,
-      ),
-    );
-  }
-
-  Widget _buildBookmarkTile(Bookmark bookmark, BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-      elevation: 1,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: ListTile(
-        leading: Container(
-          padding: const EdgeInsets.all(2),
-          decoration: BoxDecoration(
-            color: Color(bookmark.colorCode).withOpacity(0.2),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            Icons.bookmark_rounded,
-            color: Color(bookmark.colorCode),
-            size: 20,
-          ),
-        ),
-        title: Text(
-          bookmark.name,
-          style: const TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 15,
-          ),
-        ),
-        trailing: Icon(
-          Icons.arrow_forward_ios_rounded,
-          color: Colors.grey[500],
-          size: 14,
-        ),
-        onTap: () {
-          FlutterQuran().navigateToBookmark(bookmark);
-          Navigator.of(context).pop();
-        },
       ),
     );
   }
