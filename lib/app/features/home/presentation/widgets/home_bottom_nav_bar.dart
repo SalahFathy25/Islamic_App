@@ -15,9 +15,9 @@ class HomeBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 16.0.h, horizontal: 24.0.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       margin: EdgeInsets.only(right: 16.0.w, left: 16.0.w, bottom: 24.0.h),
-      height: 98.h,
+      height: 88.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0.r),
         color: AppColors.mainColor.withValues(alpha: 0.9),
