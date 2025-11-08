@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islamic_app/app/core/extensions/distance_extension.dart';
 import 'package:islamic_app/app/core/flutter_quran/src/utils/string_extensions.dart';
 import 'package:islamic_app/app/core/utils/app_colors.dart';
 import 'package:islamic_app/app/core/utils/font_style.dart';
