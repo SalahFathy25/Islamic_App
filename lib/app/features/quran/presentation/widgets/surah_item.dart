@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:islamic_app/app/core/extensions/distance_extension.dart';
+import 'package:islamic_app/app/core/flutter_quran/src/utils/string_extensions.dart';
 import 'package:islamic_app/app/core/utils/app_colors.dart';
 import 'package:islamic_app/app/core/utils/font_style.dart';
 
@@ -31,7 +33,7 @@ class SurahItem extends StatelessWidget {
         );
       },
       child: Container(
-        height: 75.h,
+        height: 70.h,
         padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
           color: const Color(0xFFF8FBFF),
@@ -46,7 +48,7 @@ class SurahItem extends StatelessWidget {
           ],
         ),
         child: SizedBox(
-          height: 50.h,
+          height: 45.h,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,9 +56,21 @@ class SurahItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "$surahNumber - $surahName",
-                    style: AppFontStyle.fontReemKafi20w400titleColor,
+                  // Text(
+                  //   "$surahNumber - $surahName",
+                  //   style: AppFontStyle.fontReemKafi20w400titleColor,
+                  // ),
+                  Text.rich(
+                    TextSpan(
+                      text: '$surahNumber'.toArabic(),
+                      style: AppFontStyle.fontReemKafi20w400titleColor,
+                      children: [
+                        TextSpan(
+                          text: ' - $surahName',
+                          style: AppFontStyle.fontReemKafi20w400titleColor,
+                        ),
+                      ],
+                    ),
                   ),
                   Text(
                     type,
@@ -67,11 +81,12 @@ class SurahItem extends StatelessWidget {
                 ],
               ),
               Text(
-                "عدد آياتها ( $ayahNumbers آية )",
+                "عدد آياتها ( $ayahNumbers آية )".toArabic(),
                 style: AppFontStyle.fontAlmarai12w400mainColor.copyWith(
                   color: AppColors.mainColor.withValues(alpha: 0.6),
                 ),
               ),
+              1.isHeight,
             ],
           ),
         ),
