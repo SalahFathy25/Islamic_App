@@ -47,48 +47,42 @@ class SurahItem extends StatelessWidget {
             ),
           ],
         ),
-        child: SizedBox(
-          height: 45.h,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // Text(
-                  //   "$surahNumber - $surahName",
-                  //   style: AppFontStyle.fontReemKafi20w400titleColor,
-                  // ),
-                  Text.rich(
-                    TextSpan(
-                      text: '$surahNumber'.toArabic(),
-                      style: AppFontStyle.fontReemKafi20w400titleColor,
-                      children: [
-                        TextSpan(
-                          text: ' - $surahName',
-                          style: AppFontStyle.fontReemKafi20w400titleColor,
-                        ),
-                      ],
-                    ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text.rich(
+                  TextSpan(
+                    text: '$surahNumber'.toArabic(),
+                    style: AppFontStyle.fontReemKafi20w400titleColor,
+                    children: [
+                      TextSpan(
+                        text: ' - $surahName',
+                        style: AppFontStyle.fontReemKafi20w400titleColor,
+                      ),
+                    ],
                   ),
-                  Text(
-                    type,
-                    style: AppFontStyle.fontAlmarai14w400White.copyWith(
-                      color: AppColors.surahStatusColor,
-                    ),
-                  ),
-                ],
-              ),
-              Text(
-                "عدد آياتها ( $ayahNumbers آية )".toArabic(),
-                style: AppFontStyle.fontAlmarai12w400mainColor.copyWith(
-                  color: AppColors.mainColor.withValues(alpha: 0.6),
                 ),
+                Text(
+                  type,
+                  style: AppFontStyle.fontAlmarai14w400White.copyWith(
+                    color: AppColors.surahStatusColor,
+                  ),
+                ),
+              ],
+            ),
+            Spacer(flex: 1),
+            Text(
+              "عدد آياتها ( $ayahNumbers آية )".toArabic(),
+              style: AppFontStyle.fontAlmarai12w400mainColor.copyWith(
+                color: AppColors.mainColor.withValues(alpha: 0.6),
               ),
-              1.isHeight,
-            ],
-          ),
+            ),
+            Spacer(flex: 2),
+          ],
         ),
       ),
     );
