@@ -27,6 +27,15 @@ dependencies:
   #  quran_library: ^2.2.3+1
   logger: ^2.6.2
 
+#  prayer_times_helper: ^1.1.0
+#  prayer_timetable: ^2.2.4
+
+  cloud_firestore: ^6.1.0
+  firebase_core: ^4.2.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.5
+
   flutter_localizations:
     sdk: flutter
 
