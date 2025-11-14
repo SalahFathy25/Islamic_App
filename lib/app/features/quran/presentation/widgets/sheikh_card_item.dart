@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islamic_app/app/features/quran/data/models/shiekh_model.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:islamic_app/app/core/routes/routes.dart';
+import 'package:islamic_app/app/features/quran/data/models/sheikh_model.dart';
+import 'package:islamic_app/app/features/quran/presentation/manager/sheikhs_cubit.dart';
+import '../../../../core/configurations/di.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/font_style.dart';
+import '../screens/sheikhs_surahs_screen.dart';
 
 class SheikhCardItem extends StatelessWidget {
   const SheikhCardItem({super.key, required this.model});
 
-  final ShiekhModel model;
+  final SheikhModel model;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: () => Navigator.pushNamed(context, model.nextScreen.toString()),
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          Routes.sheikhSurahsScreen,
+          arguments: model,
+        );
+      },
       child: Container(
         width: 174.w,
         height: 174.h,
@@ -22,14 +33,24 @@ class SheikhCardItem extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0.r),
-              child: model.image,
+              child: CachedNetworkImage(
+                imageUrl: model.sheikhImage,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
+                placeholder: (context, url) => Container(
+                  color: AppColors.black,
+                  child: const Center(child: CircularProgressIndicator()),
+                ),
+                errorWidget: (context, url, error) =>
+                    const Icon(Icons.broken_image),
+              ),
             ),
             Positioned(
               right: 4.0.w,
               left: 4.0.w,
               bottom: 4.0.h,
               child: Container(
-                width: double.infinity,
                 height: 30.h,
                 decoration: BoxDecoration(
                   color: AppColors.black.withValues(alpha: 0.9),
@@ -39,6 +60,7 @@ class SheikhCardItem extends StatelessWidget {
                   child: Text(
                     model.name,
                     style: AppFontStyle.fontAlmarai14w700White,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),

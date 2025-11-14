@@ -20,9 +20,9 @@ class FontFamily {
   /// Font family: Cairo
   static const String cairo = 'Cairo';
 
+  /// Font family: Hafs
+  static const String hafs = 'Hafs';
+
   /// Font family: ReemKufi
   static const String reemKufi = 'ReemKufi';
-
-  /// Font family: hafs
-  static const String hafs = 'hafs';
 }

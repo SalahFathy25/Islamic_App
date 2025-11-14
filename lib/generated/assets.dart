@@ -146,19 +146,34 @@ class Assets {
   static const String l10nIntlEn = 'lib/app/core/localization/l10n/intl_en.arb';
   static const String libApp = 'lib/app.dart';
   static const String libAppServices = 'lib/app_services.dart';
+  static const String libFirebaseOptions = 'lib/firebase_options.dart';
   static const String libMain = 'lib/main.dart';
+  static const String managerAudioCubit =
+      'lib/app/features/quran/presentation/manager/audio_cubit.dart';
+  static const String managerAudioState =
+      'lib/app/features/quran/presentation/manager/audio_state.dart';
+  static const String managerDownloadCubit =
+      'lib/app/features/quran/presentation/manager/download_cubit.dart';
+  static const String managerDownloadState =
+      'lib/app/features/quran/presentation/manager/download_state.dart';
+  static const String managerSheikhsCubit =
+      'lib/app/features/quran/presentation/manager/sheikhs_cubit.dart';
+  static const String managerSheikhsState =
+      'lib/app/features/quran/presentation/manager/sheikhs_state.dart';
   static const String modelsAyah =
       'lib/app/core/flutter_quran/src/models/ayah.dart';
   static const String modelsBookmark =
       'lib/app/core/flutter_quran/src/models/bookmark.dart';
+  static const String modelsDownloadedSurah =
+      'lib/app/features/quran/data/models/downloaded_surah.dart';
   static const String modelsHomeItemModel =
       'lib/app/features/home/data/models/home_item_model.dart';
   static const String modelsQuranConstants =
       'lib/app/core/flutter_quran/src/models/quran_constants.dart';
   static const String modelsQuranPage =
       'lib/app/core/flutter_quran/src/models/quran_page.dart';
-  static const String modelsShiekhModel =
-      'lib/app/features/quran/data/models/shiekh_model.dart';
+  static const String modelsSheikhModel =
+      'lib/app/features/quran/data/models/sheikh_model.dart';
   static const String modelsSurah =
       'lib/app/core/flutter_quran/src/models/surah.dart';
   static const String modelsSurahItemModel =
@@ -172,6 +187,8 @@ class Assets {
       'lib/app/core/flutter_quran/src/utils/preferences/preferences.dart';
   static const String preferencesPreferencesUtils =
       'lib/app/core/flutter_quran/src/utils/preferences/preferences_utils.dart';
+  static const String reposFirestoreRepo =
+      'lib/app/features/quran/data/repos/firestore_repo.dart';
   static const String reposSurahRepos =
       'lib/app/features/quran/data/repos/surah_repos.dart';
   static const String repositoryQuranRepository =
@@ -185,8 +202,16 @@ class Assets {
       'lib/app/features/home/presentation/screens/home_screen.dart';
   static const String screensQuranHomeScreen =
       'lib/app/features/quran/presentation/screens/quran_home_screen.dart';
+  static const String screensSheikhsSurahsScreen =
+      'lib/app/features/quran/presentation/screens/sheikhs_surahs_screen.dart';
   static const String screensSplashScreen =
       'lib/app/features/splash/presentation/screens/splash_screen.dart';
+  static const String screensSurahAudioScreen =
+      'lib/app/features/quran/presentation/screens/audio_player_screen.dart';
+  static const String servicesAudioPlayerService =
+      'lib/app/features/quran/data/services/audio_player_service.dart';
+  static const String servicesDownloadService =
+      'lib/app/features/quran/data/services/download_service.dart';
   static const String sheikhsKhaledElgaleel =
       'assets/images/sheikhs/khaled_elgaleel.jpg';
   static const String soundsNewSplashAudio =

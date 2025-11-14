@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islamic_app/app/core/routes/routes.dart';
+import 'package:islamic_app/app/features/quran/presentation/manager/sheikhs_cubit.dart';
 import 'package:islamic_app/app/features/quran/presentation/screens/quran_home_screen.dart';
 
 import '../../features/home/presentation/screens/home_screen.dart';
+import '../../features/quran/data/models/sheikh_model.dart';
+import '../../features/quran/presentation/manager/audio_cubit.dart';
+import '../../features/quran/presentation/manager/download_cubit.dart';
+import '../../features/quran/presentation/screens/sheikhs_surahs_screen.dart';
+import '../../features/quran/presentation/screens/audio_player_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
+import '../configurations/di.dart';
 
 abstract class AppRouter {
   static Route generateRoute(RouteSettings settings) {
@@ -18,7 +26,20 @@ abstract class AppRouter {
           builder: (context) => const Center(child: Text("Azkar Screen")),
         );
       case Routes.quranScreen:
-        return MaterialPageRoute(builder: (context) => const QuranHomeScreen());
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<SheikhsCubit>(),
+            child: const QuranHomeScreen(),
+          ),
+        );
+      // case Routes.sheikhSurahsScreen:
+      //   final sheikhsCubit = settings.arguments as SheikhsCubit;
+      //   return MaterialPageRoute(
+      //     builder: (context) => BlocProvider.value(
+      //       value: sheikhsCubit,
+      //       child: const SheikhSurahsScreen(),
+      //     ),
+      //   );
       case Routes.prayerScreen:
         return MaterialPageRoute(
           builder: (context) => const Center(child: Text("Prayer Screen")),
@@ -26,6 +47,30 @@ abstract class AppRouter {
       case Routes.qiblaScreen:
         return MaterialPageRoute(
           builder: (context) => const Center(child: Text("Qibla Screen")),
+        );
+      case Routes.sheikhSurahsScreen:
+        final sheikh = settings.arguments as SheikhModel;
+        return MaterialPageRoute(
+          builder: (context) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (_) => getIt<DownloadCubit>()),
+              BlocProvider(create: (_) => getIt<AudioCubit>()),
+            ],
+            child: SheikhSurahsScreen(sheikh: sheikh),
+          ),
+        );
+
+      case Routes.audioPlayerScreen:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (_) => getIt<AudioCubit>(),
+            child: AudioPlayerScreen(
+              surahName: args['surahName'],
+              audioUrl: args['audioUrl'],
+              filePath: args['filePath'],
+            ),
+          ),
         );
       /*
       case SplashScreen.routeName:
