@@ -8,9 +8,9 @@ class DownloadService {
   final Dio _dio = Dio();
   final Box<DownloadedSurah> box = Hive.box<DownloadedSurah>('downloads');
 
-  Future<String> _getSheikhDir(String sheikhId) async {
+  Future<String> _getSheikhDir(String sheikhId, String typeName) async {
     final dir = await getApplicationDocumentsDirectory();
-    final path = '${dir.path}/$sheikhId';
+    final path = '${dir.path}/$sheikhId/$typeName';
     final folder = Directory(path);
     if (!await folder.exists()) await folder.create(recursive: true);
     return path;
@@ -19,8 +19,9 @@ class DownloadService {
   Future<DownloadedSurah?> getDownloaded(
     int surahNumber,
     String sheikhId,
+    String typeName,
   ) async {
-    return box.get('$sheikhId-$surahNumber');
+    return box.get('$sheikhId-$typeName-$surahNumber');
   }
 
   Future<String> downloadSurah({
@@ -28,14 +29,15 @@ class DownloadService {
     required int surahNumber,
     required String surahName,
     required String url,
+    required String typeName,
     required void Function(int received, int total) onProgress,
   }) async {
-    final dirPath = await _getSheikhDir(sheikhId);
+    final dirPath = await _getSheikhDir(sheikhId, typeName);
     final filePath = '$dirPath/${surahNumber.toString().padLeft(3, '0')}.mp3';
     final file = File(filePath);
 
     if (await file.exists()) {
-      return filePath; // نرجع المسار إذا الملف موجود
+      return filePath;
     }
 
     await _dio.download(url, filePath, onReceiveProgress: onProgress);
@@ -45,13 +47,54 @@ class DownloadService {
       surahNumber: surahNumber,
       surahName: surahName,
       filePath: filePath,
+      typeName: typeName,
     );
-    await box.put('$sheikhId-$surahNumber', downloaded);
 
-    return filePath; // نرجع المسار بعد التحميل
+    await box.put('$sheikhId-$typeName-$surahNumber', downloaded);
+
+    return filePath;
+  }
+
+  List<DownloadedSurah> getAllDownloadsForSheikhAndType(
+    String sheikhId,
+    String typeName,
+  ) {
+    return box.values
+        .where((d) => d.sheikhId == sheikhId && d.typeName == typeName)
+        .toList();
   }
 
   List<DownloadedSurah> getAllDownloadsForSheikh(String sheikhId) {
     return box.values.where((d) => d.sheikhId == sheikhId).toList();
+  }
+
+  bool isSurahDownloaded(String sheikhId, int surahNumber, String typeName) {
+    return box.values.any(
+      (d) =>
+          d.sheikhId == sheikhId &&
+          d.surahNumber == surahNumber &&
+          d.typeName == typeName,
+    );
+  }
+
+  String? getDownloadedFilePath(
+    String sheikhId,
+    int surahNumber,
+    String typeName,
+  ) {
+    final downloaded = box.values.firstWhere(
+      (d) =>
+          d.sheikhId == sheikhId &&
+          d.surahNumber == surahNumber &&
+          d.typeName == typeName,
+      orElse: () => DownloadedSurah(
+        sheikhId: sheikhId,
+        surahNumber: surahNumber,
+        filePath: '',
+        surahName: '',
+        typeName: typeName,
+      ),
+    );
+    return downloaded.filePath.isEmpty ? null : downloaded.filePath;
   }
 }

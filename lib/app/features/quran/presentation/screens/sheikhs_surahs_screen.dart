@@ -9,13 +9,23 @@ import '../manager/download_cubit.dart';
 
 class SheikhSurahsScreen extends StatelessWidget {
   final SheikhModel sheikh;
+  final String typeName;
+  final List<SurahModel> surahs;
 
-  const SheikhSurahsScreen({super.key, required this.sheikh});
+  const SheikhSurahsScreen({
+    super.key,
+    required this.sheikh,
+    required this.typeName,
+    required this.surahs,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(sheikh.name), centerTitle: true),
+      appBar: AppBar(
+        title: Text("$typeName - ${sheikh.name}"),
+        centerTitle: true,
+      ),
       body: MultiBlocListener(
         listeners: [
           BlocListener<DownloadCubit, DownloadState>(
@@ -30,10 +40,10 @@ class SheikhSurahsScreen extends StatelessWidget {
         ],
         child: ListView.builder(
           padding: const EdgeInsets.all(12),
-          itemCount: sheikh.surahs.length,
+          itemCount: surahs.length,
           itemBuilder: (context, index) {
-            final surah = sheikh.surahs[index];
-            return _SurahCard(surah: surah, sheikh: sheikh);
+            final surah = surahs[index];
+            return _SurahCard(surah: surah, sheikh: sheikh, typeName: typeName);
           },
         ),
       ),
@@ -44,26 +54,38 @@ class SheikhSurahsScreen extends StatelessWidget {
 class _SurahCard extends StatelessWidget {
   final SurahModel surah;
   final SheikhModel sheikh;
+  final String typeName;
   late final Box<DownloadedSurah> surahBox;
 
-  _SurahCard({required this.surah, required this.sheikh}) {
+  _SurahCard({
+    required this.surah,
+    required this.sheikh,
+    required this.typeName,
+  }) {
     surahBox = Hive.box<DownloadedSurah>('downloads');
   }
 
   bool isSurahDownloaded() {
     return surahBox.values.any(
-      (s) => s.sheikhId == sheikh.id && s.surahNumber == surah.number,
+      (s) =>
+          s.sheikhId == sheikh.id &&
+          s.surahNumber == surah.number &&
+          s.typeName == typeName,
     );
   }
 
   String? getFilePath() {
     final downloaded = surahBox.values.firstWhere(
-      (s) => s.sheikhId == sheikh.id && s.surahNumber == surah.number,
+      (s) =>
+          s.sheikhId == sheikh.id &&
+          s.surahNumber == surah.number &&
+          s.typeName == typeName,
       orElse: () => DownloadedSurah(
         sheikhId: sheikh.id,
         surahNumber: surah.number,
         filePath: '',
         surahName: surah.name,
+        typeName: typeName,
       ),
     );
     return downloaded.filePath.isEmpty ? null : downloaded.filePath;
@@ -71,24 +93,28 @@ class _SurahCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final downloaded = isSurahDownloaded(); // تحقق هنا مباشرة من Hive
+    final downloaded = isSurahDownloaded();
 
     return BlocBuilder<DownloadCubit, DownloadState>(
       buildWhen: (previous, current) {
         return (current is DownloadProgress &&
-                current.surahNumber == surah.number) ||
+                current.surahNumber == surah.number &&
+                current.typeName == typeName) ||
             (current is DownloadCompleted &&
-                current.surahNumber == surah.number);
+                current.surahNumber == surah.number &&
+                current.typeName == typeName);
       },
       builder: (context, downloadState) {
         final isDownloading =
             downloadState is DownloadProgress &&
-            downloadState.surahNumber == surah.number;
+            downloadState.surahNumber == surah.number &&
+            downloadState.typeName == typeName;
+
         final isDownloaded =
             downloadState is DownloadCompleted &&
-            downloadState.surahNumber == surah.number;
+            downloadState.surahNumber == surah.number &&
+            downloadState.typeName == typeName;
 
-        // لو السورة متحملة من قبل نستخدم downloaded بدل isDownloaded
         final showPlayButton = downloaded || isDownloaded;
 
         return Card(
@@ -155,6 +181,7 @@ class _SurahCard extends StatelessWidget {
                             'surahName': surah.name,
                             'audioUrl': surah.audio,
                             'filePath': filePath,
+                            'typeName': typeName,
                           },
                         );
                       } else {
@@ -163,6 +190,7 @@ class _SurahCard extends StatelessWidget {
                           surahNumber: surah.number,
                           surahName: surah.name,
                           url: surah.audio,
+                          typeName: typeName,
                         );
                       }
                     },

@@ -21,13 +21,14 @@ class DownloadedSurahAdapter extends TypeAdapter<DownloadedSurah> {
       surahNumber: fields[1] as int,
       surahName: fields[2] as String,
       filePath: fields[3] as String,
+      typeName: fields[4] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, DownloadedSurah obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.sheikhId)
       ..writeByte(1)
@@ -35,7 +36,9 @@ class DownloadedSurahAdapter extends TypeAdapter<DownloadedSurah> {
       ..writeByte(2)
       ..write(obj.surahName)
       ..writeByte(3)
-      ..write(obj.filePath);
+      ..write(obj.filePath)
+      ..writeByte(4)
+      ..write(obj.typeName);
   }
 
   @override

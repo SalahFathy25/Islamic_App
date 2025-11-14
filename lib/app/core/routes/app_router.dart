@@ -49,14 +49,22 @@ abstract class AppRouter {
           builder: (context) => const Center(child: Text("Qibla Screen")),
         );
       case Routes.sheikhSurahsScreen:
-        final sheikh = settings.arguments as SheikhModel;
+        final args = settings.arguments as Map<String, dynamic>;
+        final sheikh = args['sheikh'] as SheikhModel;
+        final typeName = args['typeName'] as String;
+        final surahs = args['surahs'] as List<SurahModel>;
+
         return MaterialPageRoute(
           builder: (context) => MultiBlocProvider(
             providers: [
               BlocProvider(create: (_) => getIt<DownloadCubit>()),
               BlocProvider(create: (_) => getIt<AudioCubit>()),
             ],
-            child: SheikhSurahsScreen(sheikh: sheikh),
+            child: SheikhSurahsScreen(
+              sheikh: sheikh,
+              typeName: typeName,
+              surahs: surahs,
+            ),
           ),
         );
 

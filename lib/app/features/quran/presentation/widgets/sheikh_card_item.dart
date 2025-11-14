@@ -15,11 +15,7 @@ class SheikhCardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
-          context,
-          Routes.sheikhSurahsScreen,
-          arguments: model,
-        );
+        _showTypePopup(context);
       },
       child: Container(
         width: 174.w,
@@ -64,6 +60,66 @@ class SheikhCardItem extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void _showTypePopup(BuildContext context) {
+    final availableTypes = model.types.keys.toList();
+
+    showDialog(
+      context: context,
+      builder: (ctx) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "اختر نوع التلاوة",
+                  style: AppFontStyle.fontAlmarai14w800Black,
+                ),
+                const SizedBox(height: 20),
+
+                ...availableTypes.map((typeName) {
+                  return Column(
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(double.infinity, 50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.pop(ctx);
+                          Navigator.pushNamed(
+                            context,
+                            Routes.sheikhSurahsScreen,
+                            arguments: {
+                              'sheikh': model,
+                              'typeName': typeName,
+                              'surahs': model.types[typeName]?.surahs ?? [],
+                            },
+                          );
+                        },
+                        child: Text(
+                          typeName,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                    ],
+                  );
+                }),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
