@@ -15,7 +15,7 @@ class SheikhSurahsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(sheikh.name)),
+      appBar: AppBar(title: Text(sheikh.name), centerTitle: true),
       body: MultiBlocListener(
         listeners: [
           BlocListener<DownloadCubit, DownloadState>(
@@ -29,10 +29,11 @@ class SheikhSurahsScreen extends StatelessWidget {
           ),
         ],
         child: ListView.builder(
+          padding: const EdgeInsets.all(12),
           itemCount: sheikh.surahs.length,
           itemBuilder: (context, index) {
             final surah = sheikh.surahs[index];
-            return _SurahListItem(surah: surah, sheikh: sheikh);
+            return _SurahCard(surah: surah, sheikh: sheikh);
           },
         ),
       ),
@@ -40,38 +41,44 @@ class SheikhSurahsScreen extends StatelessWidget {
   }
 }
 
-class _SurahListItem extends StatelessWidget {
+class _SurahCard extends StatelessWidget {
   final SurahModel surah;
   final SheikhModel sheikh;
   late final Box<DownloadedSurah> surahBox;
 
-  _SurahListItem({required this.surah, required this.sheikh}) {
+  _SurahCard({required this.surah, required this.sheikh}) {
     surahBox = Hive.box<DownloadedSurah>('downloads');
   }
 
-  // دالة علشان نتحقق إذا كانت محملة
   bool isSurahDownloaded() {
     return surahBox.values.any(
       (s) => s.sheikhId == sheikh.id && s.surahNumber == surah.number,
     );
   }
 
-  // دالة علشان نجيب المسار
   String? getFilePath() {
     final downloaded = surahBox.values.firstWhere(
       (s) => s.sheikhId == sheikh.id && s.surahNumber == surah.number,
-      // orElse: () => null, // نضيف الـ orElse
+      orElse: () => DownloadedSurah(
+        sheikhId: sheikh.id,
+        surahNumber: surah.number,
+        filePath: '',
+        surahName: surah.name,
+      ),
     );
-    return downloaded.filePath;
+    return downloaded.filePath.isEmpty ? null : downloaded.filePath;
   }
 
   @override
   Widget build(BuildContext context) {
+    final downloaded = isSurahDownloaded(); // تحقق هنا مباشرة من Hive
+
     return BlocBuilder<DownloadCubit, DownloadState>(
       buildWhen: (previous, current) {
-        return current is DownloadProgress &&
-                current.surahNumber == surah.number ||
-            current is DownloadCompleted && current.surahNumber == surah.number;
+        return (current is DownloadProgress &&
+                current.surahNumber == surah.number) ||
+            (current is DownloadCompleted &&
+                current.surahNumber == surah.number);
       },
       builder: (context, downloadState) {
         final isDownloading =
@@ -81,43 +88,85 @@ class _SurahListItem extends StatelessWidget {
             downloadState is DownloadCompleted &&
             downloadState.surahNumber == surah.number;
 
-        return ListTile(
-          leading: CircleAvatar(child: Text('${surah.number}')),
-          title: Text(surah.name),
-          subtitle: isDownloading
-              ? LinearProgressIndicator(value: downloadState.progress / 100)
-              : Text(isDownloaded ? '📁 محملة' : '🌐 اونلاين'),
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (!isDownloaded && !isDownloading)
-                IconButton(
-                  icon: const Icon(Icons.download),
-                  onPressed: () {
-                    context.read<DownloadCubit>().downloadSurah(
-                      sheikhId: sheikh.id,
-                      surahNumber: surah.number,
-                      surahName: surah.name,
-                      url: surah.audio,
-                    );
-                  },
+        // لو السورة متحملة من قبل نستخدم downloaded بدل isDownloaded
+        final showPlayButton = downloaded || isDownloaded;
+
+        return Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          elevation: 4,
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          child: ListTile(
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 12,
+            ),
+            leading: CircleAvatar(
+              radius: 25,
+              backgroundColor: Colors.blue.shade100,
+              child: Text(
+                '${surah.number}',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
                 ),
-              IconButton(
-                icon: const Icon(Icons.play_arrow),
-                onPressed: () {
-                  final filePath = getFilePath();
-                  Navigator.pushNamed(
-                    context,
-                    Routes.audioPlayerScreen,
-                    arguments: {
-                      'surahName': surah.name,
-                      'audioUrl': surah.audio,
-                      'filePath': filePath,
-                    },
-                  );
-                },
               ),
-            ],
+            ),
+            title: Text(
+              surah.name,
+              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+            ),
+            subtitle: isDownloading
+                ? Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: LinearProgressIndicator(
+                        value: downloadState.progress / 100,
+                        minHeight: 8,
+                        backgroundColor: Colors.grey.shade300,
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          Colors.greenAccent,
+                        ),
+                      ),
+                    ),
+                  )
+                : Text(showPlayButton ? '📁 محملة' : '🌐 اونلاين'),
+            trailing: isDownloading
+                ? const SizedBox(
+                    width: 40,
+                    height: 40,
+                    child: CircularProgressIndicator(strokeWidth: 3),
+                  )
+                : IconButton(
+                    icon: Icon(
+                      showPlayButton ? Icons.play_arrow : Icons.download,
+                      color: showPlayButton ? Colors.green : Colors.blue,
+                      size: 28,
+                    ),
+                    onPressed: () {
+                      if (showPlayButton) {
+                        final filePath = getFilePath();
+                        Navigator.pushNamed(
+                          context,
+                          Routes.audioPlayerScreen,
+                          arguments: {
+                            'surahName': surah.name,
+                            'audioUrl': surah.audio,
+                            'filePath': filePath,
+                          },
+                        );
+                      } else {
+                        context.read<DownloadCubit>().downloadSurah(
+                          sheikhId: sheikh.id,
+                          surahNumber: surah.number,
+                          surahName: surah.name,
+                          url: surah.audio,
+                        );
+                      }
+                    },
+                  ),
           ),
         );
       },

@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:islamic_app/app/core/routes/routes.dart';
 import 'package:islamic_app/app/features/quran/data/models/sheikh_model.dart';
-import 'package:islamic_app/app/features/quran/presentation/manager/sheikhs_cubit.dart';
-import '../../../../core/configurations/di.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/font_style.dart';
-import '../screens/sheikhs_surahs_screen.dart';
 
 class SheikhCardItem extends StatelessWidget {
   const SheikhCardItem({super.key, required this.model});
