@@ -26,6 +26,15 @@ class AudioPlayerService {
     }
   }
 
+  Future<Duration> setFilePath(String filePath) async {
+    try {
+      final duration = await _audioPlayer.setFilePath(filePath);
+      return duration ?? Duration.zero;
+    } catch (error) {
+      throw AudioServiceException('Failed to set file path: $error');
+    }
+  }
+
   // Play from file
   Future<Duration> playFromFile(String filePath) async {
     try {

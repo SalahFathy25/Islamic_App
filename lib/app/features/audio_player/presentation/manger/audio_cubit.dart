@@ -271,27 +271,21 @@ class AudioPlayerCubit extends Cubit<AudioState> {
 
       switch (sourceType) {
         case AudioSourceType.file:
-          duration = await _audioService.playFromFile(
+          duration = await _audioService.setFilePath(
             source,
-          ); // هنا duration جاهز
+          ); // فقط set path + duration
           break;
       }
 
       _currentDuration = duration;
 
-      // أول emit قبل play
-      emit(
-        AudioPlaying(
-          source: source,
-          position: Duration.zero,
-          duration: _currentDuration,
-          isPlaying: true,
-        ),
-      );
-
-      // بعدها نبدأ الـ streams
-      await _audioService.play(); // شغل الصوت فعليًا
+      // 1️⃣ Start subscriptions قبل التشغيل
       await _startSubscriptions(source);
+
+      // 2️⃣ شغّل الصوت بعد الاشتراك
+      await _audioService.play();
+
+      // 3️⃣ فورًا أرسل state اعتمادًا على الحالة الحالية من service
       _emitCurrentState(source);
     } catch (error) {
       emit(AudioError(message: 'Failed to play audio: $error', source: source));
