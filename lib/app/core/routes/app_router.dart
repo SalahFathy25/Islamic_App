@@ -6,10 +6,10 @@ import 'package:islamic_app/app/features/quran/presentation/screens/quran_home_s
 
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/quran/data/models/sheikh_model.dart';
-import '../../features/quran/presentation/manager/audio_cubit.dart';
+import '../../features/audio_player/presentation/manger/audio_cubit.dart';
 import '../../features/quran/presentation/manager/download_cubit.dart';
 import '../../features/quran/presentation/screens/sheikhs_surahs_screen.dart';
-import '../../features/quran/presentation/screens/audio_player_screen.dart';
+import '../../features/audio_player/presentation/screens/audio_player_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
 import '../configurations/di.dart';
 
@@ -58,7 +58,7 @@ abstract class AppRouter {
           builder: (context) => MultiBlocProvider(
             providers: [
               BlocProvider(create: (_) => getIt<DownloadCubit>()),
-              BlocProvider(create: (_) => getIt<AudioCubit>()),
+              // BlocProvider(create: (_) => getIt<AudioPlayerCubit>()),
             ],
             child: SheikhSurahsScreen(
               sheikh: sheikh,
@@ -72,11 +72,13 @@ abstract class AppRouter {
         final args = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
-            create: (_) => getIt<AudioCubit>(),
+            create: (_) => getIt<AudioPlayerCubit>(),
             child: AudioPlayerScreen(
               surahName: args['surahName'],
               audioUrl: args['audioUrl'],
               filePath: args['filePath'],
+              sheikh: args['sheikh'],
+              typeName: args['typeName'],
             ),
           ),
         );

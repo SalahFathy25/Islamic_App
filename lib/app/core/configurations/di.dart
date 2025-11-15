@@ -1,8 +1,8 @@
 import 'package:get_it/get_it.dart';
-import 'package:islamic_app/app/features/quran/presentation/manager/audio_cubit.dart';
+import 'package:islamic_app/app/features/audio_player/presentation/manger/audio_cubit.dart';
 import 'package:islamic_app/app/features/quran/presentation/manager/sheikhs_cubit.dart';
 
-import '../../features/quran/data/services/audio_player_service.dart';
+import '../../features/audio_player/data/services/audio_player_service.dart';
 import '../../features/quran/data/services/download_service.dart';
 import '../../features/quran/presentation/manager/download_cubit.dart';
 import 'shared_preferences.dart';
@@ -18,6 +18,8 @@ Future<void> initGetIt() async {
 
   // Cubits
   getIt.registerLazySingleton<SheikhsCubit>(() => SheikhsCubit());
-  getIt.registerFactory<AudioCubit>(() => AudioCubit(getIt()));
+  getIt.registerFactory<AudioPlayerCubit>(
+    () => AudioPlayerCubit(audioService: getIt()),
+  );
   getIt.registerFactory<DownloadCubit>(() => DownloadCubit(getIt()));
 }

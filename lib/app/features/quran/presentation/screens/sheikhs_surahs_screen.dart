@@ -182,6 +182,7 @@ class _SurahCard extends StatelessWidget {
                             'audioUrl': surah.audio,
                             'filePath': filePath,
                             'typeName': typeName,
+                            'sheikh': sheikh,
                           },
                         );
                       } else {
