@@ -1,236 +1,3 @@
-// import 'dart:async';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:just_audio/just_audio.dart';
-//
-// import '../../data/services/audio_player_service.dart';
-//
-// part 'audio_state.dart';
-//
-// class AudioCubit extends Cubit<AudioState> {
-//   final AudioPlayerService _playerService;
-//   String? _currentSource;
-//   String? _lastCompletedSource;
-//
-//   StreamSubscription<Duration>? _positionSub;
-//   StreamSubscription<Duration?>? _durationSub;
-//   StreamSubscription<PlayerState>? _playerStateSub;
-//
-//   Duration _currentDuration = Duration.zero;
-//   bool _isOperationInProgress = false;
-//
-//   AudioCubit(this._playerService) : super(AudioInitial());
-//
-//   Future<void> _listenToPlayer(String source) async {
-//     await _cancelSubscriptions();
-//
-//     _currentSource = source;
-//
-//     // Duration stream
-//     _durationSub = _playerService.durationStream.listen((d) {
-//       _currentDuration = d ?? Duration.zero;
-//       _emitStateForCurrentSource();
-//     });
-//
-//     // Position stream
-//     _positionSub = _playerService.positionStream.listen((pos) {
-//       _emitStateForCurrentSource();
-//     });
-//
-//     // Player state stream
-//     _playerStateSub = _playerService.playerStateStream.listen((state) {
-//       final processing = state.processingState;
-//       final playing = state.playing;
-//
-//       if (processing == ProcessingState.completed) {
-//         _handleCompletion();
-//       } else if (processing == ProcessingState.ready) {
-//         _emitStateForCurrentSource();
-//       } else if (processing == ProcessingState.idle) {
-//         emit(AudioStopped());
-//         _currentSource = null;
-//       }
-//     });
-//
-//     _emitStateForCurrentSource();
-//   }
-//
-//   void _handleCompletion() {
-//     _lastCompletedSource = _currentSource;
-//     emit(
-//       AudioStoppedWithPosition(
-//         lastSource: _currentSource ?? '',
-//         duration: _currentDuration,
-//       ),
-//     );
-//     _currentSource = null;
-//     _cancelSubscriptions();
-//   }
-//
-//   void _emitStateForCurrentSource() {
-//     final src = _currentSource;
-//     if (src == null) return;
-//
-//     final playing = _playerService.playerState.playing;
-//     final pos = _playerService.position;
-//     final dur = _currentDuration;
-//
-//     if (playing) {
-//       emit(
-//         AudioPlaying(
-//           source: src,
-//           position: pos,
-//           duration: dur,
-//           isPlaying: true,
-//         ),
-//       );
-//     } else {
-//       emit(
-//         AudioPaused(
-//           source: src,
-//           position: pos,
-//           duration: dur,
-//           isPlaying: false,
-//         ),
-//       );
-//     }
-//   }
-//
-//   Future<void> _cancelSubscriptions() async {
-//     await _positionSub?.cancel();
-//     await _durationSub?.cancel();
-//     await _playerStateSub?.cancel();
-//
-//     _positionSub = null;
-//     _durationSub = null;
-//     _playerStateSub = null;
-//   }
-//
-//   Future<void> _stopAndReset() async {
-//     await _cancelSubscriptions();
-//     _currentSource = null;
-//     _currentDuration = Duration.zero;
-//     await _playerService.stop();
-//   }
-//
-//   Future<void> playOnline(String url) async {
-//     if (_isOperationInProgress) return;
-//     _isOperationInProgress = true;
-//
-//     try {
-//       // If same source is paused, resume it
-//       if (_currentSource == url &&
-//           _playerService.playerState.processingState == ProcessingState.ready &&
-//           !_playerService.playerState.playing) {
-//         await resume();
-//         return;
-//       }
-//
-//       // Reset completion state if replaying
-//       if (_lastCompletedSource == url) {
-//         _lastCompletedSource = null;
-//       }
-//
-//       emit(AudioLoading(source: url));
-//       await _stopAndReset();
-//       await _playerService.playFromUrl(url);
-//       await _listenToPlayer(url);
-//     } catch (e) {
-//       await _cancelSubscriptions();
-//       emit(AudioError("فشل التشغيل: $e", source: url));
-//       _currentSource = null;
-//     } finally {
-//       _isOperationInProgress = false;
-//     }
-//   }
-//
-//   Future<void> playOffline(String file) async {
-//     if (_isOperationInProgress) return;
-//     _isOperationInProgress = true;
-//
-//     try {
-//       if (_currentSource == file &&
-//           _playerService.playerState.processingState == ProcessingState.ready &&
-//           !_playerService.playerState.playing) {
-//         await resume();
-//         return;
-//       }
-//
-//       if (_lastCompletedSource == file) {
-//         _lastCompletedSource = null;
-//       }
-//
-//       emit(AudioLoading(source: file));
-//       await _stopAndReset();
-//       await _playerService.playFromFile(file);
-//       await _listenToPlayer(file);
-//     } catch (e) {
-//       await _cancelSubscriptions();
-//       emit(AudioError("فشل التشغيل: $e", source: file));
-//       _currentSource = null;
-//     } finally {
-//       _isOperationInProgress = false;
-//     }
-//   }
-//
-//   Future<void> pause() async {
-//     try {
-//       await _playerService.pause();
-//       // State will be updated via stream listeners
-//     } catch (e) {
-//       emit(AudioError("فشل في الإيقاف المؤقت: $e", source: _currentSource));
-//     }
-//   }
-//
-//   Future<void> resume() async {
-//     try {
-//       await _playerService.play();
-//       // State will be updated via stream listeners
-//     } catch (e) {
-//       emit(AudioError("فشل في استئناف التشغيل: $e", source: _currentSource));
-//     }
-//   }
-//
-//   Future<void> stop() async {
-//     try {
-//       await _stopAndReset();
-//       emit(AudioStopped());
-//     } catch (e) {
-//       emit(AudioError("فشل في الإيقاف: $e"));
-//     }
-//   }
-//
-//   Future<void> seek(Duration position) async {
-//     try {
-//       await _playerService.seek(position);
-//       // State will be updated via stream listeners
-//     } catch (e) {
-//       emit(
-//         AudioError(
-//           "فشل في الانتقال إلى الوقت المحدد: $e",
-//           source: _currentSource,
-//         ),
-//       );
-//     }
-//   }
-//
-//   bool isCurrentAudio(String? audioUrl, String? filePath) {
-//     return _currentSource == audioUrl || _currentSource == filePath;
-//   }
-//
-//   bool hasCompleted(String? audioUrl, String? filePath) {
-//     return _lastCompletedSource == audioUrl || _lastCompletedSource == filePath;
-//   }
-//
-//   String? get currentSource => _currentSource;
-//   String? get lastCompletedSource => _lastCompletedSource;
-//
-//   @override
-//   Future<void> close() async {
-//     await _cancelSubscriptions();
-//     return super.close();
-//   }
-// }
-
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:just_audio/just_audio.dart';
@@ -239,7 +6,7 @@ import '../../data/services/audio_player_service.dart';
 
 part 'audio_state.dart';
 
-class AudioPlayerCubit extends Cubit<AudioState> {
+class AudioCubit extends Cubit<AudioState> {
   final AudioPlayerService _audioService;
 
   String? _currentSource;
@@ -249,11 +16,10 @@ class AudioPlayerCubit extends Cubit<AudioState> {
   StreamSubscription<Duration?>? _durationSubscription;
   StreamSubscription<PlayerState>? _playerStateSubscription;
 
-  AudioPlayerCubit({required AudioPlayerService audioService})
+  AudioCubit({required AudioPlayerService audioService})
     : _audioService = audioService,
       super(const AudioInitial());
 
-  // Public methods
   Future<void> playAudio({
     required String source,
     required AudioSourceType sourceType,
@@ -271,21 +37,16 @@ class AudioPlayerCubit extends Cubit<AudioState> {
 
       switch (sourceType) {
         case AudioSourceType.file:
-          duration = await _audioService.setFilePath(
-            source,
-          ); // فقط set path + duration
+          duration = await _audioService.setFilePath(source);
           break;
       }
 
       _currentDuration = duration;
 
-      // 1️⃣ Start subscriptions قبل التشغيل
       await _startSubscriptions(source);
 
-      // 2️⃣ شغّل الصوت بعد الاشتراك
       await _audioService.play();
 
-      // 3️⃣ فورًا أرسل state اعتمادًا على الحالة الحالية من service
       _emitCurrentState(source);
     } catch (error) {
       emit(AudioError(message: 'Failed to play audio: $error', source: source));
@@ -308,20 +69,20 @@ class AudioPlayerCubit extends Cubit<AudioState> {
     }
   }
 
-  Future<void> resumeAudio() async {
-    if (_currentSource == null) return;
-
-    try {
-      await _audioService.play();
-    } catch (error) {
-      emit(
-        AudioError(
-          message: 'Failed to resume audio: $error',
-          source: _currentSource,
-        ),
-      );
-    }
-  }
+  // Future<void> resumeAudio() async {
+  //   if (_currentSource == null) return;
+  //
+  //   try {
+  //     await _audioService.play();
+  //   } catch (error) {
+  //     emit(
+  //       AudioError(
+  //         message: 'Failed to resume audio: $error',
+  //         source: _currentSource,
+  //       ),
+  //     );
+  //   }
+  // }
 
   Future<void> seekAudio(Duration position) async {
     if (_currentSource == null) return;
@@ -338,20 +99,19 @@ class AudioPlayerCubit extends Cubit<AudioState> {
     }
   }
 
-  Future<void> stopAudio() async {
-    await _stopSubscriptions();
-    _currentSource = null;
-    _currentDuration = Duration.zero;
+  // Future<void> stopAudio() async {
+  //   await _stopSubscriptions();
+  //   _currentSource = null;
+  //   _currentDuration = Duration.zero;
+  //
+  //   try {
+  //     await _audioService.stop();
+  //     emit(const AudioStopped());
+  //   } catch (error) {
+  //     emit(AudioError(message: 'Failed to stop audio: $error'));
+  //   }
+  // }
 
-    try {
-      await _audioService.stop();
-      emit(const AudioStopped());
-    } catch (error) {
-      emit(AudioError(message: 'Failed to stop audio: $error'));
-    }
-  }
-
-  // Helper methods
   Future<void> _startSubscriptions(String source) async {
     _durationSubscription = _audioService.durationStream.listen((duration) {
       _currentDuration = duration ?? Duration.zero;
@@ -383,10 +143,8 @@ class AudioPlayerCubit extends Cubit<AudioState> {
         _stopSubscriptions();
         break;
       case ProcessingState.buffering:
-        // Handle buffering if needed
         break;
       case ProcessingState.loading:
-        // Handle loading if needed
         break;
     }
   }
@@ -444,7 +202,6 @@ class AudioPlayerCubit extends Cubit<AudioState> {
     _playerStateSubscription = null;
   }
 
-  // Getters
   bool isCurrentAudio(String? audioUrl, String? filePath) {
     return _currentSource == audioUrl || _currentSource == filePath;
   }

@@ -18,8 +18,6 @@ Future<void> initGetIt() async {
 
   // Cubits
   getIt.registerLazySingleton<SheikhsCubit>(() => SheikhsCubit());
-  getIt.registerFactory<AudioPlayerCubit>(
-    () => AudioPlayerCubit(audioService: getIt()),
-  );
+  getIt.registerFactory<AudioCubit>(() => AudioCubit(audioService: getIt()));
   getIt.registerFactory<DownloadCubit>(() => DownloadCubit(getIt()));
 }

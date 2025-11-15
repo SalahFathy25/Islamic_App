@@ -106,28 +106,21 @@ class AudioPlayerScreen extends StatelessWidget {
   }
 
   Widget _buildAudioPlayer(BuildContext context) {
-    return BlocConsumer<AudioPlayerCubit, AudioState>(
-      listener: (context, state) {
-        if (state is AudioInitial) {
-          print("AudioInitial");
-        }
-      },
+    return BlocConsumer<AudioCubit, AudioState>(
+      listener: (context, state) {},
       builder: (context, state) {
-        final cubit = context.read<AudioPlayerCubit>();
+        final cubit = context.read<AudioCubit>();
         final isCurrentAudio = cubit.isCurrentAudio(audioUrl, filePath);
 
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Progress Slider
             _buildProgressSlider(state, isCurrentAudio, cubit),
             const SizedBox(height: 16),
 
-            // Time Display
             _buildTimeDisplay(state),
             const SizedBox(height: 40),
 
-            // Audio Controls
             buildAudioControls(state, isCurrentAudio, cubit, context),
           ],
         );
@@ -138,7 +131,7 @@ class AudioPlayerScreen extends StatelessWidget {
   Widget _buildProgressSlider(
     AudioState state,
     bool isCurrentAudio,
-    AudioPlayerCubit cubit,
+    AudioCubit cubit,
   ) {
     double progress = 0.0;
     Duration duration = Duration.zero;
@@ -207,13 +200,9 @@ class AudioPlayerScreen extends StatelessWidget {
   Widget buildAudioControls(
     AudioState state,
     bool isCurrentAudio,
-    AudioPlayerCubit cubit,
+    AudioCubit cubit,
     BuildContext context,
   ) {
-    // final isLoading =
-    //     state is AudioLoading &&
-    //     (state.source == audioUrl || state.source == filePath);
-
     final hasError =
         state is AudioError &&
         (state.source == audioUrl || state.source == filePath);
@@ -234,7 +223,7 @@ class AudioPlayerScreen extends StatelessWidget {
     );
   }
 
-  void _playAudio(AudioPlayerCubit cubit, BuildContext context) {
+  void _playAudio(AudioCubit cubit, BuildContext context) {
     final sourceType = AudioSourceType.file;
     final source = filePath ?? audioUrl;
 

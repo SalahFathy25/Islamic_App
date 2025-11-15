@@ -72,7 +72,7 @@ abstract class AppRouter {
         final args = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
-            create: (_) => getIt<AudioPlayerCubit>(),
+            create: (_) => getIt<AudioCubit>(),
             child: AudioPlayerScreen(
               surahName: args['surahName'],
               audioUrl: args['audioUrl'],

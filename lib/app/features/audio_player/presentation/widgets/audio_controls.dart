@@ -1,4 +1,3 @@
-// lib/features/audio_player/presentation/widgets/audio_controls.dart
 import 'package:flutter/material.dart';
 
 class AudioControls extends StatelessWidget {
@@ -19,31 +18,33 @@ class AudioControls extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        shape: BoxShape.circle,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.blue.withOpacity(0.5),
-            blurRadius: 10,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: IconButton(
-        icon: Icon(
-          isPlaying ? Icons.pause : Icons.play_arrow,
-          color: Colors.white,
-          size: 50,
+    return GestureDetector(
+      onTap: () {
+        if (hasError) {
+          onReplay();
+        } else {
+          isPlaying ? onPause() : onPlay();
+        }
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.blue.withOpacity(0.5),
+              blurRadius: 10,
+              offset: const Offset(0, 5),
+            ),
+          ],
         ),
-        onPressed: () {
-          if (hasError) {
-            onReplay();
-          } else {
-            isPlaying ? onPause() : onPlay();
-          }
-        },
+        child: Center(
+          child: Icon(
+            isPlaying ? Icons.pause : Icons.play_arrow,
+            color: Colors.white,
+            size: 50,
+          ),
+        ),
       ),
     );
   }
