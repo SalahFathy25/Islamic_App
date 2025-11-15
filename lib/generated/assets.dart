@@ -228,6 +228,7 @@ class Assets {
   static const String utilsFlutterQuranUtils =
       'lib/app/core/flutter_quran/src/utils/flutter_quran_utils.dart';
   static const String utilsFontStyle = 'lib/app/core/utils/font_style.dart';
+  static const String utilsHelpers = 'lib/app/core/utils/helpers.dart';
   static const String utilsImages =
       'lib/app/core/flutter_quran/src/utils/images.dart';
   static const String utilsPopUp = 'lib/app/core/utils/pop_up.dart';
@@ -245,6 +246,8 @@ class Assets {
       'lib/app/core/flutter_quran/src/widgets/ayah_widget.dart';
   static const String widgetsBsmallahWidget =
       'lib/app/core/flutter_quran/src/widgets/bsmallah_widget.dart';
+  static const String widgetsBuildAudioControlls =
+      'lib/app/features/audio_player/presentation/widgets/build_audio_controlls.dart';
   static const String widgetsBuildTabButton =
       'lib/app/core/widgets/build_tab_button.dart';
   static const String widgetsDailyTaskContainer =

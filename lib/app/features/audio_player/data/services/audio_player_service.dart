@@ -27,10 +27,11 @@ class AudioPlayerService {
   }
 
   // Play from file
-  Future<void> playFromFile(String filePath) async {
+  Future<Duration> playFromFile(String filePath) async {
     try {
-      await _audioPlayer.setFilePath(filePath);
-      await _audioPlayer.play();
+      // هنا duration يرجع فورًا بعد setFilePath
+      final duration = await _audioPlayer.setFilePath(filePath);
+      return duration ?? Duration.zero;
     } catch (error) {
       throw AudioServiceException('Failed to play from file: $error');
     }

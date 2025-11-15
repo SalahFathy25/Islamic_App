@@ -8,10 +8,10 @@ class AudioInitial extends AudioState {
   const AudioInitial();
 }
 
-class AudioLoading extends AudioState {
-  final String source;
-  const AudioLoading({required this.source});
-}
+// class AudioLoading extends AudioState {
+//   final String source;
+//   const AudioLoading({required this.source});
+// }
 
 class AudioPlaying extends AudioState {
   final String source;

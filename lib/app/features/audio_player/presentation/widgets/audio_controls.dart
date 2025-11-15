@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class AudioControls extends StatelessWidget {
   final bool isPlaying;
-  final bool isLoading;
   final bool hasError;
   final VoidCallback onPlay;
   final VoidCallback onPause;
@@ -12,7 +11,6 @@ class AudioControls extends StatelessWidget {
   const AudioControls({
     super.key,
     required this.isPlaying,
-    required this.isLoading,
     required this.hasError,
     required this.onPlay,
     required this.onPause,
@@ -33,41 +31,20 @@ class AudioControls extends StatelessWidget {
           ),
         ],
       ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          IconButton(
-            icon: Icon(_getIcon(), color: Colors.white, size: 50),
-            onPressed: isLoading ? null : _getOnPressed(),
-          ),
-          if (isLoading)
-            Container(
-              width: 80,
-              height: 80,
-              decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.3),
-                shape: BoxShape.circle,
-              ),
-              child: const Center(
-                child: CircularProgressIndicator(
-                  color: Colors.white,
-                  strokeWidth: 3,
-                ),
-              ),
-            ),
-        ],
+      child: IconButton(
+        icon: Icon(
+          isPlaying ? Icons.pause : Icons.play_arrow,
+          color: Colors.white,
+          size: 50,
+        ),
+        onPressed: () {
+          if (hasError) {
+            onReplay();
+          } else {
+            isPlaying ? onPause() : onPlay();
+          }
+        },
       ),
     );
-  }
-
-  IconData _getIcon() {
-    if (hasError) return Icons.error;
-    if (isLoading) return Icons.music_note;
-    return isPlaying ? Icons.pause : Icons.play_arrow;
-  }
-
-  VoidCallback? _getOnPressed() {
-    if (hasError) return onReplay;
-    return isPlaying ? onPause : onPlay;
   }
 }

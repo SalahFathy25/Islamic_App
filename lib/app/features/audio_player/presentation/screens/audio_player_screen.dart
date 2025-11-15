@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utils/helpers.dart';
 import '../../../quran/data/models/sheikh_model.dart';
 import '../manger/audio_cubit.dart';
 import '../widgets/audio_controls.dart';
@@ -107,7 +108,9 @@ class AudioPlayerScreen extends StatelessWidget {
   Widget _buildAudioPlayer(BuildContext context) {
     return BlocConsumer<AudioPlayerCubit, AudioState>(
       listener: (context, state) {
-        // Handle any side effects here
+        if (state is AudioInitial) {
+          print("AudioInitial");
+        }
       },
       builder: (context, state) {
         final cubit = context.read<AudioPlayerCubit>();
@@ -124,13 +127,8 @@ class AudioPlayerScreen extends StatelessWidget {
             _buildTimeDisplay(state),
             const SizedBox(height: 40),
 
-            // Error Message
-            if (state is AudioError &&
-                (state.source == audioUrl || state.source == filePath))
-              _buildErrorMessage(state),
-
             // Audio Controls
-            _buildAudioControls(state, isCurrentAudio, cubit, context),
+            buildAudioControls(state, isCurrentAudio, cubit, context),
           ],
         );
       },
@@ -195,51 +193,26 @@ class AudioPlayerScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          _formatDuration(position),
+          formatDuration(position),
           style: const TextStyle(color: Colors.grey),
         ),
         Text(
-          _formatDuration(duration),
+          formatDuration(duration),
           style: const TextStyle(color: Colors.grey),
         ),
       ],
     );
   }
 
-  Widget _buildErrorMessage(AudioError state) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      margin: const EdgeInsets.only(bottom: 20),
-      decoration: BoxDecoration(
-        color: Colors.red.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.red),
-      ),
-      child: Row(
-        children: [
-          const Icon(Icons.error, color: Colors.red, size: 16),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              state.message,
-              style: const TextStyle(color: Colors.red),
-              maxLines: 2,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildAudioControls(
+  Widget buildAudioControls(
     AudioState state,
     bool isCurrentAudio,
     AudioPlayerCubit cubit,
     BuildContext context,
   ) {
-    final isLoading =
-        state is AudioLoading &&
-        (state.source == audioUrl || state.source == filePath);
+    // final isLoading =
+    //     state is AudioLoading &&
+    //     (state.source == audioUrl || state.source == filePath);
 
     final hasError =
         state is AudioError &&
@@ -253,20 +226,8 @@ class AudioPlayerScreen extends StatelessWidget {
     return Center(
       child: AudioControls(
         isPlaying: isPlaying,
-        isLoading: isLoading,
         hasError: hasError,
-        onPlay: () {
-          if (isCompleted) {
-            // Restart completed audio
-            _playAudio(cubit, context);
-          } else if (isCurrentAudio) {
-            // Resume current audio
-            cubit.resumeAudio();
-          } else {
-            // Play new audio
-            _playAudio(cubit, context);
-          }
-        },
+        onPlay: () => _playAudio(cubit, context),
         onPause: () => cubit.pauseAudio(),
         onReplay: () => _playAudio(cubit, context),
       ),
@@ -274,26 +235,11 @@ class AudioPlayerScreen extends StatelessWidget {
   }
 
   void _playAudio(AudioPlayerCubit cubit, BuildContext context) {
-    final sourceType = filePath != null
-        ? AudioSourceType.file
-        : AudioSourceType.network;
+    final sourceType = AudioSourceType.file;
     final source = filePath ?? audioUrl;
 
     if (source != null) {
       cubit.playAudio(source: source, sourceType: sourceType);
-    }
-  }
-
-  String _formatDuration(Duration duration) {
-    String twoDigits(int n) => n.toString().padLeft(2, '0');
-    final hours = duration.inHours;
-    final minutes = duration.inMinutes.remainder(60);
-    final seconds = duration.inSeconds.remainder(60);
-
-    if (hours > 0) {
-      return '${twoDigits(hours)}:${twoDigits(minutes)}:${twoDigits(seconds)}';
-    } else {
-      return '${twoDigits(minutes)}:${twoDigits(seconds)}';
     }
   }
 }

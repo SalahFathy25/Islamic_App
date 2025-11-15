@@ -264,20 +264,35 @@ class AudioPlayerCubit extends Cubit<AudioState> {
     }
 
     await _stopSubscriptions();
-    emit(AudioLoading(source: source));
     _currentSource = source;
 
     try {
+      Duration duration = Duration.zero;
+
       switch (sourceType) {
-        case AudioSourceType.network:
-          await _audioService.playFromUrl(source);
-          break;
         case AudioSourceType.file:
-          await _audioService.playFromFile(source);
+          duration = await _audioService.playFromFile(
+            source,
+          ); // هنا duration جاهز
           break;
       }
 
+      _currentDuration = duration;
+
+      // أول emit قبل play
+      emit(
+        AudioPlaying(
+          source: source,
+          position: Duration.zero,
+          duration: _currentDuration,
+          isPlaying: true,
+        ),
+      );
+
+      // بعدها نبدأ الـ streams
+      await _audioService.play(); // شغل الصوت فعليًا
       await _startSubscriptions(source);
+      _emitCurrentState(source);
     } catch (error) {
       emit(AudioError(message: 'Failed to play audio: $error', source: source));
       _currentSource = null;
@@ -447,4 +462,4 @@ class AudioPlayerCubit extends Cubit<AudioState> {
   }
 }
 
-enum AudioSourceType { network, file }
+enum AudioSourceType { file }
