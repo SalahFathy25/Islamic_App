@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/app/core/extensions/distance_extension.dart';
+import 'package:quran_library/quran_library.dart';
 import '../../data/models/surah_item_model.dart';
 
 import '../../data/repos/surah_repos.dart';
@@ -20,6 +21,7 @@ class _SurahsListViewState extends State<SurahsListView> {
   void initState() {
     super.initState();
     loadData();
+    QuranLibrary.init();
   }
 
   Future<void> loadData() async {

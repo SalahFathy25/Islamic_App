@@ -1,4 +1,4 @@
-import 'package:islamic_app/app/core/flutter_quran/src/utils/string_extensions.dart';
+import 'package:islamic_app/app/core/extensions/string_extensions.dart';
 
 class Ayah {
   final int id,

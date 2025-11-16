@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islamic_app/app/core/flutter_quran/src/utils/string_extensions.dart';
 import 'package:islamic_app/app/core/utils/app_colors.dart';
 import 'package:islamic_app/app/core/utils/font_style.dart';
-
-import '../../../../core/flutter_quran/src/flutter_quran_screen.dart';
+import 'package:quran_library/quran_library.dart';
 
 class SurahItem extends StatelessWidget {
   final int surahNumber;
@@ -27,7 +25,11 @@ class SurahItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => FlutterQuranScreen(initialSurah: surahNumber),
+            builder: (context) => QuranLibraryScreen(parentContext: context),
+            // QuranPagesScreen(
+            //   parentContext: context,
+            //   surahNumber: surahNumber,
+            // ),
           ),
         );
       },

@@ -6,7 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:islamic_app/app/core/flutter_quran/src/models/ayah.dart';
 import 'package:islamic_app/app/core/flutter_quran/src/models/bookmark.dart';
 import 'package:islamic_app/app/core/flutter_quran/src/utils/flutter_quran_utils.dart';
-import 'package:islamic_app/app/core/flutter_quran/src/utils/string_extensions.dart';
+import 'package:islamic_app/app/core/extensions/string_extensions.dart';
 import 'package:islamic_app/app/core/utils/app_colors.dart';
 
 import 'app_bloc.dart';

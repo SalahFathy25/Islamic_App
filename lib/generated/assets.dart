@@ -3,88 +3,145 @@ class Assets {
   Assets._();
 
   static const String configurationsDi = 'lib/app/core/configurations/di.dart';
-  static const String configurationsSharedPreferences = 'lib/app/core/configurations/shared_preferences.dart';
-  static const String controllersBookmarksController = 'lib/app/core/flutter_quran/src/controllers/bookmarks_controller.dart';
-  static const String controllersQuranController = 'lib/app/core/flutter_quran/src/controllers/quran_controller.dart';
-  static const String cubitAppThemeCubit = 'lib/app/core/theme/cubit/app_theme_cubit.dart';
-  static const String cubitAppThemeState = 'lib/app/core/theme/cubit/app_theme_state.dart';
-  static const String cubitLanguageCubit = 'lib/app/core/localization/cubit/language_cubit.dart';
-  static const String cubitLanguageState = 'lib/app/core/localization/cubit/language_state.dart';
-  static const String customThemesCustomAppbarTheme = 'lib/app/core/theme/custom_themes/custom_appbar_theme.dart';
-  static const String customThemesCustomBottomSheetTheme = 'lib/app/core/theme/custom_themes/custom_bottom_sheet_theme.dart';
-  static const String customThemesCustomCheckboxTheme = 'lib/app/core/theme/custom_themes/custom_checkbox_theme.dart';
-  static const String customThemesCustomChipTheme = 'lib/app/core/theme/custom_themes/custom_chip_theme.dart';
-  static const String customThemesCustomElevatedButtonTheme = 'lib/app/core/theme/custom_themes/custom_elevated_button_theme.dart';
-  static const String customThemesCustomOutlinedButtonTheme = 'lib/app/core/theme/custom_themes/custom_outlined_button_theme.dart';
-  static const String customThemesCustomTextButtonTheme = 'lib/app/core/theme/custom_themes/custom_text_button_theme.dart';
-  static const String customThemesCustomTextFieldTheme = 'lib/app/core/theme/custom_themes/custom_text_field_theme.dart';
-  static const String customThemesCustomTextTheme = 'lib/app/core/theme/custom_themes/custom_text_theme.dart';
+  static const String configurationsSharedPreferences =
+      'lib/app/core/configurations/shared_preferences.dart';
+  static const String controllersBookmarksController =
+      'lib/app/core/flutter_quran/src/controllers/bookmarks_controller.dart';
+  static const String controllersQuranController =
+      'lib/app/core/flutter_quran/src/controllers/quran_controller.dart';
+  static const String cubitAppThemeCubit =
+      'lib/app/core/theme/cubit/app_theme_cubit.dart';
+  static const String cubitAppThemeState =
+      'lib/app/core/theme/cubit/app_theme_state.dart';
+  static const String cubitLanguageCubit =
+      'lib/app/core/localization/cubit/language_cubit.dart';
+  static const String cubitLanguageState =
+      'lib/app/core/localization/cubit/language_state.dart';
+  static const String customThemesCustomAppbarTheme =
+      'lib/app/core/theme/custom_themes/custom_appbar_theme.dart';
+  static const String customThemesCustomBottomSheetTheme =
+      'lib/app/core/theme/custom_themes/custom_bottom_sheet_theme.dart';
+  static const String customThemesCustomCheckboxTheme =
+      'lib/app/core/theme/custom_themes/custom_checkbox_theme.dart';
+  static const String customThemesCustomChipTheme =
+      'lib/app/core/theme/custom_themes/custom_chip_theme.dart';
+  static const String customThemesCustomElevatedButtonTheme =
+      'lib/app/core/theme/custom_themes/custom_elevated_button_theme.dart';
+  static const String customThemesCustomOutlinedButtonTheme =
+      'lib/app/core/theme/custom_themes/custom_outlined_button_theme.dart';
+  static const String customThemesCustomTextButtonTheme =
+      'lib/app/core/theme/custom_themes/custom_text_button_theme.dart';
+  static const String customThemesCustomTextFieldTheme =
+      'lib/app/core/theme/custom_themes/custom_text_field_theme.dart';
+  static const String customThemesCustomTextTheme =
+      'lib/app/core/theme/custom_themes/custom_text_theme.dart';
   static const String errorFailures = 'lib/app/core/helper/error/failures.dart';
-  static const String extensionsBoxExtensions = 'lib/app/core/extensions/box_extensions.dart';
-  static const String extensionsColorExtensions = 'lib/app/core/extensions/color_extensions.dart';
-  static const String extensionsCompleteFlutterExtensions = 'lib/app/core/extensions/complete_flutter_extensions.dart';
-  static const String extensionsDistanceExtension = 'lib/app/core/extensions/distance_extension.dart';
-  static const String extensionsExtensionDr = 'lib/app/core/extensions/extension_dr.dart';
-  static const String extensionsHexColors = 'lib/app/core/extensions/hex_colors.dart';
-  static const String extensionsSizingExtensions = 'lib/app/core/extensions/sizing_extensions.dart';
-  static const String extensionsStringExtention = 'lib/app/core/extensions/string_extention.dart';
-  static const String extensionsStyleExtensions = 'lib/app/core/extensions/style_extensions.dart';
-  static const String extensionsStyleExtensionsMor = 'lib/app/core/extensions/style_extensions_mor.dart';
+  static const String extensionsBoxExtensions =
+      'lib/app/core/extensions/box_extensions.dart';
+  static const String extensionsColorExtensions =
+      'lib/app/core/extensions/color_extensions.dart';
+  static const String extensionsCompleteFlutterExtensions =
+      'lib/app/core/extensions/complete_flutter_extensions.dart';
+  static const String extensionsDistanceExtension =
+      'lib/app/core/extensions/distance_extension.dart';
+  static const String extensionsExtensionDr =
+      'lib/app/core/extensions/extension_dr.dart';
+  static const String extensionsHexColors =
+      'lib/app/core/extensions/hex_colors.dart';
+  static const String extensionsSizingExtensions =
+      'lib/app/core/extensions/sizing_extensions.dart';
+  static const String extensionsStringExtensions =
+      'lib/app/core/extensions/string_extensions.dart';
+  static const String extensionsStringExtention =
+      'lib/app/core/extensions/string_extention.dart';
+  static const String extensionsStyleExtensions =
+      'lib/app/core/extensions/style_extensions.dart';
+  static const String extensionsStyleExtensionsMor =
+      'lib/app/core/extensions/style_extensions_mor.dart';
   static const String extensionsSystem = 'lib/app/core/extensions/System.dart';
-  static const String extensionsTextStyleExtensions = 'lib/app/core/extensions/text_style_extensions.dart';
-  static const String flutterQuranFlutterQuran = 'lib/app/core/flutter_quran/flutter_quran.dart';
+  static const String extensionsTextStyleExtensions =
+      'lib/app/core/extensions/text_style_extensions.dart';
+  static const String flutterQuranFlutterQuran =
+      'lib/app/core/flutter_quran/flutter_quran.dart';
   static const String fontsAlmaraiBold = 'assets/fonts/Almarai-Bold.ttf';
-  static const String fontsAlmaraiExtraBold = 'assets/fonts/Almarai-ExtraBold.ttf';
+  static const String fontsAlmaraiExtraBold =
+      'assets/fonts/Almarai-ExtraBold.ttf';
   static const String fontsAlmaraiLight = 'assets/fonts/Almarai-Light.ttf';
   static const String fontsAlmaraiRegular = 'assets/fonts/Almarai-Regular.ttf';
-  static const String fontsAmiriQuranRegular = 'assets/fonts/AmiriQuran-Regular.ttf';
+  static const String fontsAmiriQuranRegular =
+      'assets/fonts/AmiriQuran-Regular.ttf';
   static const String fontsCairoBlack = 'assets/fonts/Cairo-Black.ttf';
   static const String fontsCairoBold = 'assets/fonts/Cairo-Bold.ttf';
   static const String fontsCairoExtraBold = 'assets/fonts/Cairo-ExtraBold.ttf';
-  static const String fontsCairoExtraLight = 'assets/fonts/Cairo-ExtraLight.ttf';
+  static const String fontsCairoExtraLight =
+      'assets/fonts/Cairo-ExtraLight.ttf';
   static const String fontsCairoLight = 'assets/fonts/Cairo-Light.ttf';
   static const String fontsCairoMedium = 'assets/fonts/Cairo-Medium.ttf';
   static const String fontsCairoRegular = 'assets/fonts/Cairo-Regular.ttf';
   static const String fontsCairoSemiBold = 'assets/fonts/Cairo-SemiBold.ttf';
-  static const String fontsHafs = 'lib/app/core/flutter_quran/assets/fonts/hafs.ttf';
-  static const String fontsReemKufiFunBold = 'assets/fonts/ReemKufiFun-Bold.ttf';
-  static const String fontsReemKufiFunMedium = 'assets/fonts/ReemKufiFun-Medium.ttf';
-  static const String fontsReemKufiFunRegular = 'assets/fonts/ReemKufiFun-Regular.ttf';
-  static const String fontsReemKufiFunSemiBold = 'assets/fonts/ReemKufiFun-SemiBold.ttf';
-  static const String functionsFunctions = 'lib/app/core/functions/functions.dart';
-  static const String genAssets.gen = 'lib/gen/assets.gen.dart';
-  static const String genFonts.gen = 'lib/gen/fonts.gen.dart';
+  static const String fontsHafs =
+      'lib/app/core/flutter_quran/assets/fonts/hafs.ttf';
+  static const String fontsReemKufiFunBold =
+      'assets/fonts/ReemKufiFun-Bold.ttf';
+  static const String fontsReemKufiFunMedium =
+      'assets/fonts/ReemKufiFun-Medium.ttf';
+  static const String fontsReemKufiFunRegular =
+      'assets/fonts/ReemKufiFun-Regular.ttf';
+  static const String fontsReemKufiFunSemiBold =
+      'assets/fonts/ReemKufiFun-SemiBold.ttf';
+  static const String functionsFunctions =
+      'lib/app/core/functions/functions.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
-  static const String generatedL10n = 'lib/app/core/localization/generated/l10n.dart';
-  static const String helperGlobleModel = 'lib/app/core/helper/globle_model.dart';
-  static const String helperSizeConfigHelper = 'lib/app/core/helper/size_config_helper.dart';
-  static const String homeImagesAzkaarImage = 'assets/images/home_images/azkaar_image.png';
-  static const String homeImagesDoaaArafaImage = 'assets/images/home_images/doaa_arafa_image.png';
-  static const String homeImagesDoaaFridayImage = 'assets/images/home_images/doaa_friday_image.png';
-  static const String homeImagesDoaaOutOfHomeImage = 'assets/images/home_images/doaa_out_of_home_image.png';
-  static const String homeImagesDoaaSafarImage = 'assets/images/home_images/doaa_safar_image.png';
-  static const String homeImagesDoaaShefaaImage = 'assets/images/home_images/doaa_shefaa_image.png';
-  static const String homeImagesDuaaMotauafiImage = 'assets/images/home_images/duaa_motauafi_image.png';
-  static const String homeImagesHagImage = 'assets/images/home_images/hag_image.png';
-  static const String homeImagesPrayerImage = 'assets/images/home_images/prayer_image.png';
-  static const String homeImagesQuranImage = 'assets/images/home_images/quran_image.png';
-  static const String homeImagesZakaahImage = 'assets/images/home_images/zakaah_image.png';
+  static const String generatedL10n =
+      'lib/app/core/localization/generated/l10n.dart';
+  static const String helperGlobleModel =
+      'lib/app/core/helper/globle_model.dart';
+  static const String helperSizeConfigHelper =
+      'lib/app/core/helper/size_config_helper.dart';
+  static const String homeImagesAzkaarImage =
+      'assets/images/home_images/azkaar_image.png';
+  static const String homeImagesDoaaArafaImage =
+      'assets/images/home_images/doaa_arafa_image.png';
+  static const String homeImagesDoaaFridayImage =
+      'assets/images/home_images/doaa_friday_image.png';
+  static const String homeImagesDoaaOutOfHomeImage =
+      'assets/images/home_images/doaa_out_of_home_image.png';
+  static const String homeImagesDoaaSafarImage =
+      'assets/images/home_images/doaa_safar_image.png';
+  static const String homeImagesDoaaShefaaImage =
+      'assets/images/home_images/doaa_shefaa_image.png';
+  static const String homeImagesDuaaMotauafiImage =
+      'assets/images/home_images/duaa_motauafi_image.png';
+  static const String homeImagesHagImage =
+      'assets/images/home_images/hag_image.png';
+  static const String homeImagesPrayerImage =
+      'assets/images/home_images/prayer_image.png';
+  static const String homeImagesQuranImage =
+      'assets/images/home_images/quran_image.png';
+  static const String homeImagesZakaahImage =
+      'assets/images/home_images/zakaah_image.png';
   static const String iconsAppIcon = 'assets/images/icons/app_icon.svg';
   static const String iconsAzkaarIcon = 'assets/images/icons/azkaar_icon.svg';
   static const String iconsBackIcon = 'assets/images/icons/back_icon.svg';
-  static const String iconsHomePrayerTimesIcon = 'assets/images/icons/home_prayer_times_icon.svg';
-  static const String iconsNotificationIcon = 'assets/images/icons/notification_icon.svg';
+  static const String iconsHomePrayerTimesIcon =
+      'assets/images/icons/home_prayer_times_icon.svg';
+  static const String iconsNotificationIcon =
+      'assets/images/icons/notification_icon.svg';
   static const String iconsPrayerIcon = 'assets/images/icons/prayer_icon.svg';
   static const String iconsQiblaIcon = 'assets/images/icons/qibla_icon.svg';
   static const String iconsQuranIcon = 'assets/images/icons/quran_icon.svg';
   static const String iconsSearchIcon = 'assets/images/icons/search_icon.svg';
   static const String imagesAppName = 'assets/images/app_name.png';
-  static const String imagesSurahHeader = 'lib/app/core/flutter_quran/assets/images/surah_header.png';
+  static const String imagesSurahHeader =
+      'lib/app/core/flutter_quran/assets/images/surah_header.png';
   static const String imagesTopAppbar = 'assets/images/top_appbar.svg';
   static const String imagesTopHomeAppbar = 'assets/images/top_home_appbar.svg';
-  static const String intlMessagesAll = 'lib/app/core/localization/generated/intl/messages_all.dart';
-  static const String intlMessagesAr = 'lib/app/core/localization/generated/intl/messages_ar.dart';
-  static const String intlMessagesEn = 'lib/app/core/localization/generated/intl/messages_en.dart';
+  static const String intlMessagesAll =
+      'lib/app/core/localization/generated/intl/messages_all.dart';
+  static const String intlMessagesAr =
+      'lib/app/core/localization/generated/intl/messages_ar.dart';
+  static const String intlMessagesEn =
+      'lib/app/core/localization/generated/intl/messages_en.dart';
   static const String jsonsQuranHafs = 'assets/jsons/quran_hafs.json';
   static const String jsonsSurahs = 'assets/jsons/surahs.json';
   static const String l10nIntlAr = 'lib/app/core/localization/l10n/intl_ar.arb';
@@ -93,86 +150,147 @@ class Assets {
   static const String libAppServices = 'lib/app_services.dart';
   static const String libFirebaseOptions = 'lib/firebase_options.dart';
   static const String libMain = 'lib/main.dart';
-  static const String managerDownloadCubit = 'lib/app/features/quran/presentation/manager/download_cubit.dart';
-  static const String managerDownloadState = 'lib/app/features/quran/presentation/manager/download_state.dart';
-  static const String managerSheikhsCubit = 'lib/app/features/quran/presentation/manager/sheikhs_cubit.dart';
-  static const String managerSheikhsState = 'lib/app/features/quran/presentation/manager/sheikhs_state.dart';
-  static const String mangerAudioCubit = 'lib/app/features/audio_player/presentation/manger/audio_cubit.dart';
-  static const String mangerAudioState = 'lib/app/features/audio_player/presentation/manger/audio_state.dart';
-  static const String modelsAyah = 'lib/app/core/flutter_quran/src/models/ayah.dart';
-  static const String modelsBookmark = 'lib/app/core/flutter_quran/src/models/bookmark.dart';
-  static const String modelsDownloadedSurah = 'lib/app/features/quran/data/models/downloaded_surah.dart';
-  static const String modelsDownloadedSurah.g = 'lib/app/features/quran/data/models/downloaded_surah.g.dart';
-  static const String modelsHomeItemModel = 'lib/app/features/home/data/models/home_item_model.dart';
-  static const String modelsQuranConstants = 'lib/app/core/flutter_quran/src/models/quran_constants.dart';
-  static const String modelsQuranPage = 'lib/app/core/flutter_quran/src/models/quran_page.dart';
-  static const String modelsSheikhModel = 'lib/app/features/quran/data/models/sheikh_model.dart';
-  static const String modelsSurah = 'lib/app/core/flutter_quran/src/models/surah.dart';
-  static const String modelsSurahItemModel = 'lib/app/features/quran/data/models/surah_item_model.dart';
-  static const String networkApiErrorModel = 'lib/app/core/network/api_error_model.dart';
-  static const String networkApiErrorModel.g = 'lib/app/core/network/api_error_model.g.dart';
+  static const String managerDownloadCubit =
+      'lib/app/features/quran/presentation/manager/download_cubit.dart';
+  static const String managerDownloadState =
+      'lib/app/features/quran/presentation/manager/download_state.dart';
+  static const String managerSheikhsCubit =
+      'lib/app/features/quran/presentation/manager/sheikhs_cubit.dart';
+  static const String managerSheikhsState =
+      'lib/app/features/quran/presentation/manager/sheikhs_state.dart';
+  static const String mangerAudioCubit =
+      'lib/app/features/audio_player/presentation/manger/audio_cubit.dart';
+  static const String mangerAudioState =
+      'lib/app/features/audio_player/presentation/manger/audio_state.dart';
+  static const String modelsAyah =
+      'lib/app/core/flutter_quran/src/models/ayah.dart';
+  static const String modelsBookmark =
+      'lib/app/core/flutter_quran/src/models/bookmark.dart';
+  static const String modelsDownloadedSurah =
+      'lib/app/features/quran/data/models/downloaded_surah.dart';
+  static const String modelsHomeItemModel =
+      'lib/app/features/home/data/models/home_item_model.dart';
+  static const String modelsQuranConstants =
+      'lib/app/core/flutter_quran/src/models/quran_constants.dart';
+  static const String modelsQuranPage =
+      'lib/app/core/flutter_quran/src/models/quran_page.dart';
+  static const String modelsSheikhModel =
+      'lib/app/features/quran/data/models/sheikh_model.dart';
+  static const String modelsSurah =
+      'lib/app/core/flutter_quran/src/models/surah.dart';
+  static const String modelsSurahItemModel =
+      'lib/app/features/quran/data/models/surah_item_model.dart';
+  static const String networkApiErrorModel =
+      'lib/app/core/network/api_error_model.dart';
   static const String networkApiResult = 'lib/app/core/network/api_result.dart';
-  static const String networkDioFactory = 'lib/app/core/network/dio_factory.dart';
-  static const String preferencesPreferences = 'lib/app/core/flutter_quran/src/utils/preferences/preferences.dart';
-  static const String preferencesPreferencesUtils = 'lib/app/core/flutter_quran/src/utils/preferences/preferences_utils.dart';
-  static const String reposFirestoreRepo = 'lib/app/features/quran/data/repos/firestore_repo.dart';
-  static const String reposSurahRepos = 'lib/app/features/quran/data/repos/surah_repos.dart';
-  static const String repositoryQuranRepository = 'lib/app/core/flutter_quran/src/repository/quran_repository.dart';
+  static const String networkDioFactory =
+      'lib/app/core/network/dio_factory.dart';
+  static const String preferencesPreferences =
+      'lib/app/core/flutter_quran/src/utils/preferences/preferences.dart';
+  static const String preferencesPreferencesUtils =
+      'lib/app/core/flutter_quran/src/utils/preferences/preferences_utils.dart';
+  static const String reposFirestoreRepo =
+      'lib/app/features/quran/data/repos/firestore_repo.dart';
+  static const String reposSurahRepos =
+      'lib/app/features/quran/data/repos/surah_repos.dart';
+  static const String repositoryQuranRepository =
+      'lib/app/core/flutter_quran/src/repository/quran_repository.dart';
   static const String routesAppRouter = 'lib/app/core/routes/app_router.dart';
-  static const String routesBlocObserver = 'lib/app/core/routes/bloc_observer.dart';
+  static const String routesBlocObserver =
+      'lib/app/core/routes/bloc_observer.dart';
   static const String routesNavigation = 'lib/app/core/routes/navigation.dart';
   static const String routesRoutes = 'lib/app/core/routes/routes.dart';
-  static const String screensAudioPlayerScreen = 'lib/app/features/audio_player/presentation/screens/audio_player_screen.dart';
-  static const String screensHomeScreen = 'lib/app/features/home/presentation/screens/home_screen.dart';
-  static const String screensQuranHomeScreen = 'lib/app/features/quran/presentation/screens/quran_home_screen.dart';
-  static const String screensSheikhsSurahsScreen = 'lib/app/features/quran/presentation/screens/sheikhs_surahs_screen.dart';
-  static const String screensSplashScreen = 'lib/app/features/splash/presentation/screens/splash_screen.dart';
-  static const String servicesAudioPlayerService = 'lib/app/features/audio_player/data/services/audio_player_service.dart';
-  static const String servicesDownloadService = 'lib/app/features/quran/data/services/download_service.dart';
-  static const String sheikhsKhaledElgaleel = 'assets/images/sheikhs/khaled_elgaleel.jpg';
-  static const String soundsNewSplashAudio = 'assets/sounds/new_splash_audio.mp3';
+  static const String screensAudioPlayerScreen =
+      'lib/app/features/audio_player/presentation/screens/audio_player_screen.dart';
+  static const String screensHomeScreen =
+      'lib/app/features/home/presentation/screens/home_screen.dart';
+  static const String screensQuranHomeScreen =
+      'lib/app/features/quran/presentation/screens/quran_home_screen.dart';
+  static const String screensSheikhsSurahsScreen =
+      'lib/app/features/quran/presentation/screens/sheikhs_surahs_screen.dart';
+  static const String screensSplashScreen =
+      'lib/app/features/splash/presentation/screens/splash_screen.dart';
+  static const String servicesAudioPlayerService =
+      'lib/app/features/audio_player/data/services/audio_player_service.dart';
+  static const String servicesDownloadService =
+      'lib/app/features/quran/data/services/download_service.dart';
+  static const String sheikhsKhaledElgaleel =
+      'assets/images/sheikhs/khaled_elgaleel.jpg';
+  static const String soundsNewSplashAudio =
+      'assets/sounds/new_splash_audio.mp3';
   static const String soundsSplashAudio = 'assets/sounds/splash_audio.mp3';
-  static const String srcAppBloc = 'lib/app/core/flutter_quran/src/app_bloc.dart';
-  static const String srcFlutterQuranScreen = 'lib/app/core/flutter_quran/src/flutter_quran_screen.dart';
+  static const String srcAppBloc =
+      'lib/app/core/flutter_quran/src/app_bloc.dart';
+  static const String srcFlutterQuranScreen =
+      'lib/app/core/flutter_quran/src/flutter_quran_screen.dart';
   static const String themeTheme = 'lib/app/core/theme/theme.dart';
   static const String utilsAppColors = 'lib/app/core/utils/app_colors.dart';
   static const String utilsAppStrings = 'lib/app/core/utils/app_strings.dart';
   static const String utilsConstants = 'lib/app/core/utils/constants.dart';
-  static const String utilsFlutterQuranUtils = 'lib/app/core/flutter_quran/src/utils/flutter_quran_utils.dart';
+  static const String utilsFlutterQuranUtils =
+      'lib/app/core/flutter_quran/src/utils/flutter_quran_utils.dart';
   static const String utilsFontStyle = 'lib/app/core/utils/font_style.dart';
   static const String utilsHelpers = 'lib/app/core/utils/helpers.dart';
-  static const String utilsImages = 'lib/app/core/flutter_quran/src/utils/images.dart';
+  static const String utilsImages =
+      'lib/app/core/flutter_quran/src/utils/images.dart';
   static const String utilsPopUp = 'lib/app/core/utils/pop_up.dart';
-  static const String utilsStringExtensions = 'lib/app/core/flutter_quran/src/utils/string_extensions.dart';
-  static const String utilsToastUtils = 'lib/app/core/flutter_quran/src/utils/toast_utils.dart';
-  static const String widgetsAppAppBar = 'lib/app/core/widgets/app_app_bar.dart';
-  static const String widgetsAudioControls = 'lib/app/features/audio_player/presentation/widgets/audio_controls.dart';
-  static const String widgetsAyahLongClickDialog = 'lib/app/core/flutter_quran/src/widgets/ayah_long_click_dialog.dart';
-  static const String widgetsAyahWidget = 'lib/app/core/flutter_quran/src/widgets/ayah_widget.dart';
-  static const String widgetsBsmallahWidget = 'lib/app/core/flutter_quran/src/widgets/bsmallah_widget.dart';
-  static const String widgetsBuildTabButton = 'lib/app/core/widgets/build_tab_button.dart';
-  static const String widgetsDailyTaskContainer = 'lib/app/features/home/presentation/widgets/daily_task_container.dart';
-  static const String widgetsDefaultDrawer = 'lib/app/core/flutter_quran/src/widgets/default_drawer.dart';
-  static const String widgetsDoaaItem = 'lib/app/features/home/presentation/widgets/doaa_item.dart';
-  static const String widgetsDoaasListView = 'lib/app/features/home/presentation/widgets/doaas_list_view.dart';
-  static const String widgetsHomeAppbar = 'lib/app/features/home/presentation/widgets/home_appbar.dart';
-  static const String widgetsHomeBody = 'lib/app/features/home/presentation/widgets/home_body.dart';
-  static const String widgetsHomeBottomNavBar = 'lib/app/features/home/presentation/widgets/home_bottom_nav_bar.dart';
-  static const String widgetsPrayerContainer = 'lib/app/features/home/presentation/widgets/prayer_container.dart';
-  static const String widgetsQuranLine = 'lib/app/core/flutter_quran/src/widgets/quran_line.dart';
-  static const String widgetsQuranPageBottomInfo = 'lib/app/core/flutter_quran/src/widgets/quran_page_bottom_info.dart';
-  static const String widgetsQuranTabBar = 'lib/app/features/quran/presentation/widgets/quran_tab_bar.dart';
-  static const String widgetsSearchContainer = 'lib/app/core/widgets/search_container.dart';
-  static const String widgetsSearchHomeAppBar = 'lib/app/features/home/presentation/widgets/search_home_app_bar.dart';
-  static const String widgetsSectionTitle = 'lib/app/core/widgets/section_title.dart';
-  static const String widgetsSheikhCardItem = 'lib/app/features/quran/presentation/widgets/sheikh_card_item.dart';
-  static const String widgetsSheikhsGridView = 'lib/app/features/quran/presentation/widgets/sheikhs_grid_view.dart';
-  static const String widgetsShortcutItem = 'lib/app/features/home/presentation/widgets/shortcut_item.dart';
-  static const String widgetsShortcutsListView = 'lib/app/features/home/presentation/widgets/shortcuts_list_view.dart';
-  static const String widgetsSmallContainer = 'lib/app/core/widgets/small_container.dart';
-  static const String widgetsSurahHeaderWidget = 'lib/app/core/flutter_quran/src/widgets/surah_header_widget.dart';
-  static const String widgetsSurahItem = 'lib/app/features/quran/presentation/widgets/surah_item.dart';
-  static const String widgetsSurahsListView = 'lib/app/features/quran/presentation/widgets/surahs_list_view.dart';
+  static const String utilsToastUtils =
+      'lib/app/core/flutter_quran/src/utils/toast_utils.dart';
+  static const String widgetsAppAppBar =
+      'lib/app/core/widgets/app_app_bar.dart';
+  static const String widgetsAudioControls =
+      'lib/app/features/audio_player/presentation/widgets/audio_controls.dart';
+  static const String widgetsAyahLongClickDialog =
+      'lib/app/core/flutter_quran/src/widgets/ayah_long_click_dialog.dart';
+  static const String widgetsAyahWidget =
+      'lib/app/core/flutter_quran/src/widgets/ayah_widget.dart';
+  static const String widgetsBsmallahWidget =
+      'lib/app/core/flutter_quran/src/widgets/bsmallah_widget.dart';
+  static const String widgetsBuildTabButton =
+      'lib/app/core/widgets/build_tab_button.dart';
+  static const String widgetsDailyTaskContainer =
+      'lib/app/features/home/presentation/widgets/daily_task_container.dart';
+  static const String widgetsDefaultDrawer =
+      'lib/app/core/flutter_quran/src/widgets/default_drawer.dart';
+  static const String widgetsDoaaItem =
+      'lib/app/features/home/presentation/widgets/doaa_item.dart';
+  static const String widgetsDoaasListView =
+      'lib/app/features/home/presentation/widgets/doaas_list_view.dart';
+  static const String widgetsHomeAppbar =
+      'lib/app/features/home/presentation/widgets/home_appbar.dart';
+  static const String widgetsHomeBody =
+      'lib/app/features/home/presentation/widgets/home_body.dart';
+  static const String widgetsHomeBottomNavBar =
+      'lib/app/features/home/presentation/widgets/home_bottom_nav_bar.dart';
+  static const String widgetsPrayerContainer =
+      'lib/app/features/home/presentation/widgets/prayer_container.dart';
+  static const String widgetsQuranLine =
+      'lib/app/core/flutter_quran/src/widgets/quran_line.dart';
+  static const String widgetsQuranPageBottomInfo =
+      'lib/app/core/flutter_quran/src/widgets/quran_page_bottom_info.dart';
+  static const String widgetsQuranTabBar =
+      'lib/app/features/quran/presentation/widgets/quran_tab_bar.dart';
+  static const String widgetsSearchContainer =
+      'lib/app/core/widgets/search_container.dart';
+  static const String widgetsSearchHomeAppBar =
+      'lib/app/features/home/presentation/widgets/search_home_app_bar.dart';
+  static const String widgetsSectionTitle =
+      'lib/app/core/widgets/section_title.dart';
+  static const String widgetsSheikhCardItem =
+      'lib/app/features/quran/presentation/widgets/sheikh_card_item.dart';
+  static const String widgetsSheikhsGridView =
+      'lib/app/features/quran/presentation/widgets/sheikhs_grid_view.dart';
+  static const String widgetsShortcutItem =
+      'lib/app/features/home/presentation/widgets/shortcut_item.dart';
+  static const String widgetsShortcutsListView =
+      'lib/app/features/home/presentation/widgets/shortcuts_list_view.dart';
+  static const String widgetsSmallContainer =
+      'lib/app/core/widgets/small_container.dart';
+  static const String widgetsSurahHeaderWidget =
+      'lib/app/core/flutter_quran/src/widgets/surah_header_widget.dart';
+  static const String widgetsSurahItem =
+      'lib/app/features/quran/presentation/widgets/surah_item.dart';
+  static const String widgetsSurahsListView =
+      'lib/app/features/quran/presentation/widgets/surahs_list_view.dart';
   static const String widgetsTopAppbar = 'lib/app/core/widgets/top_appbar.dart';
-
 }

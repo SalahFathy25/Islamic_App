@@ -6,6 +6,7 @@ import 'package:islamic_app/app/core/widgets/app_app_bar.dart';
 import 'package:islamic_app/app/features/quran/presentation/widgets/quran_tab_bar.dart';
 import 'package:islamic_app/app/features/quran/presentation/widgets/sheikhs_grid_view.dart';
 import 'package:islamic_app/app/features/quran/presentation/widgets/surahs_list_view.dart';
+import 'package:quran_library/quran_library.dart';
 
 import '../manager/sheikhs_cubit.dart';
 
@@ -23,8 +24,9 @@ class _QuranHomeScreenState extends State<QuranHomeScreen> {
   @override
   void initState() {
     super.initState();
-    FlutterQuran().init();
+    // FlutterQuran().init();
     context.read<SheikhsCubit>().getSheikhs();
+
     _pageController = PageController();
   }
 
