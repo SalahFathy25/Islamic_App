@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:islamic_app/app/core/extensions/distance_extension.dart';
 import 'package:islamic_app/app/features/quran/presentation/widgets/sheikh_card_item.dart';
+import 'package:islamic_app/app/features/quran/presentation/widgets/sheikh_category_title.dart';
 
 import '../manager/sheikhs_cubit.dart';
 
@@ -13,28 +16,49 @@ class SheikhsGridView extends StatelessWidget {
       builder: (context, state) {
         if (state is SheikhsLoading) {
           return const Center(child: CircularProgressIndicator());
-        } else if (state is SheikhsLoaded) {
-          final sheikhs = state.sheikhs;
-
-          return GridView.builder(
-            padding: EdgeInsets.all(24.0),
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
-            ),
-            itemCount: sheikhs.length,
-            itemBuilder: (BuildContext context, int index) {
-              return SheikhCardItem(model: sheikhs[index]);
-            },
-          );
-        } else if (state is SheikhsError) {
-          return Center(child: Text('Error: ${state.message}'));
-        } else {
-          return const SizedBox.shrink();
         }
+
+        if (state is SheikhsLoaded) {
+          final sheikhs = state.sheikhs;
+          final grouped = context.read<SheikhsCubit>().groupSheikhsByType(
+            sheikhs,
+          );
+
+          return ListView(
+            padding: const EdgeInsets.all(16),
+            children: grouped.entries.map((entry) {
+              final typeName = entry.key;
+              final sheikhsList = entry.value;
+
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SheikhCategoryTitle(title: typeName),
+                  SizedBox(
+                    height: 85.h,
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: sheikhsList.length,
+                      scrollDirection: Axis.horizontal,
+                      separatorBuilder: (_, _) => 8.isWidth,
+                      itemBuilder: (_, index) {
+                        return SheikhCardItem(
+                          model: sheikhsList[index],
+                          typeName: typeName,
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              );
+            }).toList(),
+          );
+        }
+        if (state is SheikhsError) {
+          return Center(child: Text('Error: ${state.message}'));
+        }
+        return const SizedBox.shrink();
       },
     );
   }

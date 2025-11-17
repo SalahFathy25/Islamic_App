@@ -16,6 +16,12 @@ class AppFontStyle {
     fontWeight: FontWeight.w400,
     color: AppColors.mainColor,
   );
+  static TextStyle fontAlmarai12w700mainColor = TextStyle(
+    fontSize: 12.sp,
+    fontFamily: 'Almarai',
+    fontWeight: FontWeight.w700,
+    color: AppColors.mainColor,
+  );
   static TextStyle fontAlmarai14w700White = TextStyle(
     fontSize: 14.sp,
     fontFamily: 'Almarai',
@@ -55,6 +61,12 @@ class AppFontStyle {
   static TextStyle fontCairo18w700black = TextStyle(
     fontSize: 18.sp,
     fontFamily: 'Cairo',
+    fontWeight: FontWeight.w700,
+    color: AppColors.black,
+  );
+  static TextStyle fontAlmarai18w700black = TextStyle(
+    fontSize: 18.sp,
+    fontFamily: 'Almarai',
     fontWeight: FontWeight.w700,
     color: AppColors.black,
   );

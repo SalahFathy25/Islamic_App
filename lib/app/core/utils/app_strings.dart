@@ -19,4 +19,5 @@ class AppStrings {
   static const String doaaForArafaaTitle = 'دعاء عرفة';
   static const String quranFirstTab = 'المصحف مكتوب';
   static const String quranSecondTab = 'مشايخ التلاوة';
+  static const String qaree = 'القارئ :';
 }

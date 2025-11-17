@@ -44,4 +44,17 @@ class SheikhsCubit extends Cubit<SheikhsState> {
       throw Exception("فشل تحميل الملف: $e");
     }
   }
+
+  Map<String, List<SheikhModel>> groupSheikhsByType(List<SheikhModel> sheikhs) {
+    final Map<String, List<SheikhModel>> grouped = {};
+
+    for (var sheikh in sheikhs) {
+      for (var typeName in sheikh.types.keys) {
+        grouped.putIfAbsent(typeName, () => []);
+        grouped[typeName]!.add(sheikh);
+      }
+    }
+
+    return grouped;
+  }
 }

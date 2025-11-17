@@ -278,6 +278,8 @@ class Assets {
       'lib/app/core/widgets/section_title.dart';
   static const String widgetsSheikhCardItem =
       'lib/app/features/quran/presentation/widgets/sheikh_card_item.dart';
+  static const String widgetsSheikhCategory =
+      'lib/app/features/quran/presentation/widgets/sheikh_category_title.dart';
   static const String widgetsSheikhsGridView =
       'lib/app/features/quran/presentation/widgets/sheikhs_grid_view.dart';
   static const String widgetsShortcutItem =
